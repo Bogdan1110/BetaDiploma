@@ -17,10 +17,7 @@ namespace Beta
 
 		private void MostSimpleMovement()
 		{
-			var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-			var scaledSpeed = _speed * Time.deltaTime;
-
-			transform.Translate(direction * scaledSpeed);
+			
 		}
 	}
 }
