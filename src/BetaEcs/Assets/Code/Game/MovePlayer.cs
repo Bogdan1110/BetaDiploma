@@ -8,10 +8,7 @@ namespace Beta
 		private readonly IGroup<GameEntity> _entities;
 		private float _speed = 5f;
 
-		public MovePlayer(Contexts contexts)
-		{
-			_entities = contexts.game.GetGroup(GameMatcher.Player);
-		}
+		public MovePlayer(Contexts contexts) => _entities = contexts.game.GetGroup(GameMatcher.Player);
 
 		public void Execute()
 		{

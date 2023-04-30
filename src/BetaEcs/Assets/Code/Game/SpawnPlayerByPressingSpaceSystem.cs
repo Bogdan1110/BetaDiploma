@@ -13,7 +13,7 @@ namespace Beta
 		public void Execute()
 		{
 			if (Input.GetKey(KeyCode.Space)
-			    && _counter++ >= 1)
+			    && _counter++ < 1)
 			{
 				var e = _contexts.game.CreateEntity();
 				e.isPlayer = true;
