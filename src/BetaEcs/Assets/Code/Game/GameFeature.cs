@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Beta
@@ -7,8 +8,10 @@ namespace Beta
 		public GameFeature(Contexts contexts)
 			: base(nameof(GameFeature))
 		{
+			var playerPrefab = Resources.Load("Player/Player");
+			Add(new SpawnPlayerSystem(contexts, playerPrefab));
 			Add(new SpawnPlayerByPressingSpaceSystem(contexts));
-			Add(new BindPositionViewsSystem(contexts, Resources.Load<PositionView>("Player/Player")));
+			Add(new BindPositionViewsSystem(contexts, playerPrefab.GetComponent<PositionView>()));
 
 			Add(new MovePlayer(contexts));
 
