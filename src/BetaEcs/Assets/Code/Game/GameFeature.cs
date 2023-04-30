@@ -9,11 +9,10 @@ namespace Beta
 			: base(nameof(GameFeature))
 		{
 			var playerPrefab = Resources.Load("Player/Player");
-			Add(new SpawnPlayerSystem(contexts, playerPrefab));
-			Add(new SpawnPlayerByPressingSpaceSystem(contexts));
 			Add(new BindPositionViewsSystem(contexts, playerPrefab.GetComponent<PositionView>()));
 
-			Add(new MovePlayer(contexts));
+			Add(new PlayerMovementSystem(contexts));
+			Add(new SyncPlayerSystem(contexts));
 
 			Add(new GameEventSystems(contexts));
 		}
