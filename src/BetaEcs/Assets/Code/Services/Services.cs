@@ -8,6 +8,8 @@ namespace Beta
 
 		public static ITimeService Time => Context.timeService.Value;
 
+		public static ICameraService Camera => Context.cameraService.Value;
+
 		private static ServicesContext Context => Contexts.sharedInstance.services;
 	}
 }

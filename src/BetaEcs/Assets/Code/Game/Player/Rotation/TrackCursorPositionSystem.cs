@@ -8,14 +8,13 @@ namespace Beta
 		private readonly IGroup<GameEntity> _entities;
 
 		public TrackCursorPositionSystem(Contexts contexts)
-			=> _entities = contexts.game.GetGroup(AllOf(Cursor, Position));
+			=> _entities = contexts.game.GetGroup(AllOf(GameMatcher.Cursor, Position));
 
 		public void Execute()
 		{
 			foreach (var e in _entities)
 			{
-				var position = UnityEngine.Camera.main!.ScreenToWorldPoint(Services.Input.CursorPosition);
-				e.ReplacePosition(position);
+				e.ReplacePosition(Services.Camera.ScreenToWorldPoint(Services.Input.CursorPosition));
 			}
 		}
 	}

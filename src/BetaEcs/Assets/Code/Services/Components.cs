@@ -8,4 +8,6 @@ namespace Beta
 	[Services] [Unique] public sealed class BalanceServiceComponent : IComponent { public IBalanceService Value; }
 	
 	[Services] [Unique] public sealed class TimeServiceComponent : IComponent { public ITimeService Value; }
+	
+	[Services] [Unique] public sealed class CameraServiceComponent : IComponent { public ICameraService Value; }
 }

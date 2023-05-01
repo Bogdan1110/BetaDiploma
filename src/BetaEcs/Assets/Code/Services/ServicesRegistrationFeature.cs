@@ -11,6 +11,7 @@ namespace Beta
 			Register<IInputService>(new OldInputService(), contexts.services.ReplaceInputService);
 			Register<IBalanceService>(LoadBalance(), contexts.services.ReplaceBalanceService);
 			Register<ITimeService>(new TimeService(), contexts.services.ReplaceTimeService);
+			Register<ICameraService>(new CameraService(), contexts.services.ReplaceCameraService);
 		}
 
 		private static Balance LoadBalance() => Resources.Load<Balance>(Constants.ResourcePath.Balance);
