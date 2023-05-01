@@ -6,6 +6,8 @@ namespace Beta
 
 		public static IBalanceService Balance => Context.balanceService.Value;
 
+		public static ITimeService Time => Context.timeService.Value;
+
 		private static ServicesContext Context => Contexts.sharedInstance.services;
 	}
 }

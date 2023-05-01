@@ -10,6 +10,7 @@ namespace Beta
 		{
 			Register<IInputService>(new OldInputService(), contexts.services.ReplaceInputService);
 			Register<IBalanceService>(BalanceFile, contexts.services.ReplaceBalanceService);
+			Register<ITimeService>(new TimeService(), contexts.services.ReplaceTimeService);
 		}
 
 		private static Balance BalanceFile => Resources.Load<Balance>(Constants.ResourcePath.Balance);

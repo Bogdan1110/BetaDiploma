@@ -10,16 +10,19 @@ public static class ServicesComponentsLookup {
 
     public const int BalanceService = 0;
     public const int InputService = 1;
+    public const int TimeService = 2;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
         "BalanceService",
-        "InputService"
+        "InputService",
+        "TimeService"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Beta.BalanceServiceComponent),
-        typeof(Beta.InputServiceComponent)
+        typeof(Beta.InputServiceComponent),
+        typeof(Beta.TimeServiceComponent)
     };
 }
