@@ -8,15 +8,18 @@
 //------------------------------------------------------------------------------
 public static class ServicesComponentsLookup {
 
-    public const int InputService = 0;
+    public const int BalanceService = 0;
+    public const int InputService = 1;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 2;
 
     public static readonly string[] componentNames = {
+        "BalanceService",
         "InputService"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Beta.BalanceServiceComponent),
         typeof(Beta.InputServiceComponent)
     };
 }
