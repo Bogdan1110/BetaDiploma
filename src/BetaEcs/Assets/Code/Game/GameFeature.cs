@@ -8,6 +8,7 @@ namespace Beta
 			// Initialization
 			Add(new ServicesRegistrationFeature(contexts));
 			Add(new SpawnCursorSystem(contexts));
+			Add(new PlayerLookAtCursorSystem(contexts));
 			
 			// Update
 			Add(new PlayerMovementSystem(contexts));

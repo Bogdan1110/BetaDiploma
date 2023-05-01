@@ -9,26 +9,32 @@
 public static class GameComponentsLookup {
 
     public const int Cursor = 0;
-    public const int NetworkIdentity = 1;
-    public const int Player = 2;
-    public const int Position = 3;
-    public const int PositionListener = 4;
+    public const int LookAt = 1;
+    public const int NetworkIdentity = 2;
+    public const int Player = 3;
+    public const int Position = 4;
+    public const int Rotation = 5;
+    public const int PositionListener = 6;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
         "Cursor",
+        "LookAt",
         "NetworkIdentity",
         "Player",
         "Position",
+        "Rotation",
         "PositionListener"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Beta.CursorComponent),
+        typeof(Beta.LookAtComponent),
         typeof(Beta.NetworkIdentityComponent),
         typeof(Beta.PlayerComponent),
         typeof(Beta.PositionComponent),
+        typeof(Beta.RotationComponent),
         typeof(PositionListenerComponent)
     };
 }
