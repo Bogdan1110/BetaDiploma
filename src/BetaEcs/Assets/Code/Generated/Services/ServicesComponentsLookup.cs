@@ -17,6 +17,6 @@ public static class ServicesComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Services.InputServiceComponent)
+        typeof(Beta.InputServiceComponent)
     };
 }

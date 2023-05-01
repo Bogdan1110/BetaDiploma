@@ -1,7 +1,7 @@
 using UnityEngine;
 using Vector2 = System.Numerics.Vector2;
 
-namespace Services
+namespace Beta
 {
 	public interface IInputService
 	{

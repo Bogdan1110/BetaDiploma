@@ -1,6 +1,7 @@
 using Entitas;
+using Entitas.CodeGeneration.Attributes;
 
-namespace Services
+namespace Beta
 {
-	[Services] public sealed class InputServiceComponent : IComponent { public IInputService Value; }
+	[Services] [Unique] public sealed class InputServiceComponent : IComponent { public IInputService Value; }
 }
