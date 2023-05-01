@@ -1,4 +1,5 @@
 using Entitas;
+using UnityEngine;
 
 namespace Beta
 {
@@ -13,6 +14,13 @@ namespace Beta
 			var e = _contexts.game.CreateEntity();
 			e.isCursor = true;
 			e.AddPosition(Services.Input.CursorPosition);
+			e.AddPositionListener(SpawnPrefab());
+		}
+
+		private IPositionListener SpawnPrefab()
+		{
+			var cursorPrefab = Resources.Load<PositionView>("Player/Cursor");
+			return Object.Instantiate(cursorPrefab);
 		}
 	}
 }

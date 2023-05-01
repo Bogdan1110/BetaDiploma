@@ -8,7 +8,7 @@ namespace Beta
 		private readonly IGroup<GameEntity> _entities;
 
 		public TrackCursorPositionSystem(Contexts contexts)
-			=> _entities = contexts.game.GetGroup(AllOf(GameMatcher.Cursor, Position));
+			=> _entities = contexts.game.GetGroup(AllOf(Cursor, Position));
 
 		public void Execute()
 		{
