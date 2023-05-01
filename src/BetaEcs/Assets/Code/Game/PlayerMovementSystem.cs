@@ -1,3 +1,4 @@
+using System.Linq;
 using Entitas;
 using UnityEngine;
 using static GameMatcher;
@@ -13,14 +14,13 @@ namespace Beta
 
 		public void Execute()
 		{
-			foreach (var playerEntity in _players.GetEntities())
+			foreach (var playerEntity in _players.GetEntities().Where((e) => e.networkIdentity.Value.isOwned))
 			{
 				var moveHorizontal = Input.GetAxis("Horizontal");
 				var moveVertical = Input.GetAxis("Vertical");
-				var movement = new Vector3(moveHorizontal, moveVertical);
+				var movement = new Vector2(moveHorizontal, moveVertical) * Time.deltaTime * 5f;
 
-				var transform = playerEntity.networkIdentity.Value.transform;
-				transform.position += movement * 5f * Time.deltaTime;
+				playerEntity.ReplacePosition(playerEntity.position.Value + movement);
 			}
 		}
 	}
