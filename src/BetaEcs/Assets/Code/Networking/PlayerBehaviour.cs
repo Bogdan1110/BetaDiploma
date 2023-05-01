@@ -15,6 +15,7 @@ namespace Beta
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddPosition(transform.position);
 			_positionView.RegisterListener(e);
+			e.AddRotation(0f);
 		}
 	}
 }

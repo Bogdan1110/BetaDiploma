@@ -13,6 +13,7 @@ namespace Beta
 			// Update
 			Add(new PlayerMovementSystem(contexts));
 			Add(new TrackCursorPositionSystem(contexts));
+			Add(new LookAtTargetSystem(contexts));
 
 			// Entitas Generated
 			Add(new GameEventSystems(contexts));

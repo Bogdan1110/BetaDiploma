@@ -15,8 +15,9 @@ public static class GameComponentsLookup {
     public const int Position = 4;
     public const int Rotation = 5;
     public const int PositionListener = 6;
+    public const int RotationListener = 7;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 8;
 
     public static readonly string[] componentNames = {
         "Cursor",
@@ -25,7 +26,8 @@ public static class GameComponentsLookup {
         "Player",
         "Position",
         "Rotation",
-        "PositionListener"
+        "PositionListener",
+        "RotationListener"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -35,6 +37,7 @@ public static class GameComponentsLookup {
         typeof(Beta.PlayerComponent),
         typeof(Beta.PositionComponent),
         typeof(Beta.RotationComponent),
-        typeof(PositionListenerComponent)
+        typeof(PositionListenerComponent),
+        typeof(RotationListenerComponent)
     };
 }

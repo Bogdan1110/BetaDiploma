@@ -9,7 +9,7 @@ namespace Beta
 		private readonly IGroup<GameEntity> _players;
 
 		public PlayerLookAtCursorSystem(Contexts contexts) : base(contexts.game)
-			=> _players = contexts.game.GetGroup(AllOf(Player, Position));
+			=> _players = contexts.game.GetGroup(AllOf(Player));
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
 			=> context.CreateCollector(Cursor);
@@ -21,12 +21,10 @@ namespace Beta
 			foreach (var cursor in entities)
 			foreach (var player in _players)
 			{
-				if (player.IsOwned() == false)
+				if (player.IsOwned())
 				{
-					continue;
+					player.AddLookAt(cursor);
 				}
-
-				player.AddLookAt(cursor);
 			}
 		}
 	}
