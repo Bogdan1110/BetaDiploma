@@ -5,10 +5,15 @@ namespace Beta
 		public GameFeature(Contexts contexts)
 			: base(nameof(GameFeature))
 		{
+			// Initialization
 			Add(new ServicesRegistrationFeature(contexts));
-
+			Add(new SpawnCursorSystem(contexts));
+			
+			// Update
 			Add(new PlayerMovementSystem(contexts));
+			Add(new TrackCursorPositionSystem(contexts));
 
+			// Entitas Generated
 			Add(new GameEventSystems(contexts));
 		}
 	}
