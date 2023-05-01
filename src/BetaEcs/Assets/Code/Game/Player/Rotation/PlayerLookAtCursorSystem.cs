@@ -6,20 +6,20 @@ namespace Beta
 {
 	public sealed class PlayerLookAtCursorSystem : ReactiveSystem<GameEntity>
 	{
-		private readonly IGroup<GameEntity> _players;
+		private readonly IGroup<GameEntity> _cursors;
 
 		public PlayerLookAtCursorSystem(Contexts contexts) : base(contexts.game)
-			=> _players = contexts.game.GetGroup(AllOf(Player));
+			=> _cursors = contexts.game.GetGroup(AllOf(Cursor));
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-			=> context.CreateCollector(Cursor);
+			=> context.CreateCollector(Player);
 
 		protected override bool Filter(GameEntity entity) => true;
 
 		protected override void Execute(List<GameEntity> entities)
 		{
-			foreach (var cursor in entities)
-			foreach (var player in _players)
+			foreach (var player in entities)
+			foreach (var cursor in _cursors)
 			{
 				if (player.IsOwned())
 				{
