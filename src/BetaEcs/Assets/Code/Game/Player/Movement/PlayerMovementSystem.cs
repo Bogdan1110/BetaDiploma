@@ -7,21 +7,29 @@ namespace Beta
 {
 	public class PlayerMovementSystem : IExecuteSystem
 	{
-		private readonly IGroup<GameEntity> _players;
+		private readonly Contexts _contexts;
+		private readonly IGroup<GameEntity> _entities;
 
 		public PlayerMovementSystem(Contexts contexts)
-			=> _players = contexts.game.GetGroup(AllOf(Player, NetworkIdentity));
+		{
+			_contexts = contexts;
+			_entities = _contexts.game.GetGroup(AllOf(Player, Position, NetworkIdentity));
+		}
+
+		private Vector2 Movement => Input.MovementDirection * Time.deltaTime * BalancePlayerSpeed;
+
+		private static float BalancePlayerSpeed => 5f;
+
+		private IInputService Input => _contexts.services.inputService.Value;
 
 		public void Execute()
 		{
-			foreach (var playerEntity in _players.GetEntities().Where((e) => e.networkIdentity.Value.isOwned))
+			foreach (var e in _entities.GetEntities().Where(IsOwned))
 			{
-				var moveHorizontal = Input.GetAxis("Horizontal");
-				var moveVertical = Input.GetAxis("Vertical");
-				var movement = new Vector2(moveHorizontal, moveVertical) * Time.deltaTime * 5f;
-
-				playerEntity.ReplacePosition(playerEntity.position.Value + movement);
+				e.ReplacePosition(e.position.Value + Movement);
 			}
 		}
+
+		private static bool IsOwned(GameEntity entity) => entity.networkIdentity.Value.isOwned;
 	}
 }
