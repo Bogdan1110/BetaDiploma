@@ -1,6 +1,5 @@
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
-using Mirror;
 using UnityEngine;
 
 namespace Beta
@@ -9,7 +8,5 @@ namespace Beta
 
 	[Game] [Event(EventTarget.Self)] public sealed class PositionComponent : IComponent { public Vector2 Value; }
 	
-	[Game] public sealed class NetworkIdentityComponent : IComponent { public NetworkIdentity Value; }
-	
-	[Game] public sealed class GameObjectComponent : IComponent { public GameObject Value; }
+	[Game] public sealed class NetworkIdentityComponent : IComponent { public Mirror.NetworkIdentity Value; }
 }

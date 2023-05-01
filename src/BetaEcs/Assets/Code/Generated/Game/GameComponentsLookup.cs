@@ -8,16 +8,14 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int GameObject = 0;
-    public const int NetworkIdentity = 1;
-    public const int Player = 2;
-    public const int Position = 3;
-    public const int PositionListener = 4;
+    public const int NetworkIdentity = 0;
+    public const int Player = 1;
+    public const int Position = 2;
+    public const int PositionListener = 3;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
-        "GameObject",
         "NetworkIdentity",
         "Player",
         "Position",
@@ -25,7 +23,6 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Beta.GameObjectComponent),
         typeof(Beta.NetworkIdentityComponent),
         typeof(Beta.PlayerComponent),
         typeof(Beta.PositionComponent),

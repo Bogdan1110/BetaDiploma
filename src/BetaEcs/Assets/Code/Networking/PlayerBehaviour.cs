@@ -13,7 +13,6 @@ namespace Beta
 			var e = Contexts.sharedInstance.game.CreateEntity();
 			e.isPlayer = true;
 			e.AddNetworkIdentity(_networkIdentity);
-			e.AddGameObject(gameObject);
 			e.AddPosition(transform.position);
 			_positionView.RegisterListener(e);
 		}
