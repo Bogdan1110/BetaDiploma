@@ -25,6 +25,7 @@ namespace Beta
 
 		private void ReadInput(Contexts contexts)
 		{
+			Add(new SendShootSignalSystem(contexts));
 			Add(new PlayerMovementSystem(contexts));
 			Add(new TrackCursorPositionSystem(contexts));
 		}
@@ -36,6 +37,10 @@ namespace Beta
 
 		private void RegisterServices(Contexts contexts) => Add(new ServicesRegistrationFeature(contexts));
 
-		private void CallEntitasGeneratedStuff(Contexts contexts) => Add(new GameEventSystems(contexts));
+		private void CallEntitasGeneratedStuff(Contexts contexts)
+		{
+			Add(new GameEventSystems(contexts));
+			Add(new GameCleanupSystems(contexts));
+		}
 	}
 }
