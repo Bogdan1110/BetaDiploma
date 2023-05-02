@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Balance
   m_EditorClassIdentifier: 
   <Player>k__BackingField:
-    <Speed>k__BackingField: 5
+    <Speed>k__BackingField: 3
