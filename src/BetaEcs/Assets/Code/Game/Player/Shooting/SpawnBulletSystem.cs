@@ -53,7 +53,7 @@ namespace Beta
 			bullet.GetComponent<Bullet>().Initialize(owner, target);
 		}
 
-		[Command]
+		[Command(requiresAuthority = false)]
 		private void CmdSpawnBullet(uint owner, Vector2 target, Vector2 position)
 			=> SpawnBullet(owner, target, position);
 
