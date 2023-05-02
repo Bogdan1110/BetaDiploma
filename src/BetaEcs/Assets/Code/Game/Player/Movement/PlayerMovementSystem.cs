@@ -24,6 +24,6 @@ namespace Beta
 			}
 		}
 
-		private static bool IsOwned(GameEntity entity) => entity.networkIdentity.Value.isOwned;
+		private static bool IsOwned(GameEntity entity) => entity.IsOwned();
 	}
 }

@@ -7,6 +7,7 @@ namespace Beta
 	{
 		[SerializeField] private NetworkIdentity _networkIdentity;
 		[SerializeField] private PositionView _positionView;
+		[SerializeField] private RotationView _rotationView;
 
 		private void Start()
 		{
@@ -15,6 +16,8 @@ namespace Beta
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddPosition(transform.position);
 			_positionView.RegisterListener(e);
+			e.AddRotation(0f);
+			_rotationView.RegisterListener(e);
 		}
 	}
 }

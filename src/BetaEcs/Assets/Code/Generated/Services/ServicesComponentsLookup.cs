@@ -9,19 +9,22 @@
 public static class ServicesComponentsLookup {
 
     public const int BalanceService = 0;
-    public const int InputService = 1;
-    public const int TimeService = 2;
+    public const int CameraService = 1;
+    public const int InputService = 2;
+    public const int TimeService = 3;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
         "BalanceService",
+        "CameraService",
         "InputService",
         "TimeService"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Beta.BalanceServiceComponent),
+        typeof(Beta.CameraServiceComponent),
         typeof(Beta.InputServiceComponent),
         typeof(Beta.TimeServiceComponent)
     };
