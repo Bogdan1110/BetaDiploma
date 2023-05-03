@@ -8,6 +8,7 @@ namespace Beta
 		[SerializeField] private NetworkIdentity _networkIdentity;
 		[SerializeField] private PositionView _positionView;
 		[SerializeField] private RotationView _rotationView;
+		[SerializeField] private BulletSpawner _bulletSpawner;
 
 		private void Start()
 		{
@@ -15,9 +16,10 @@ namespace Beta
 			e.isPlayer = true;
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddPosition(transform.position);
-			_positionView.RegisterListener(e);
+			e.AddPositionListener(_positionView);
 			e.AddRotation(0f);
-			_rotationView.RegisterListener(e);
+			e.AddRotationListener(_rotationView);
+			e.AddBulletSpawner(_bulletSpawner);
 		}
 	}
 }

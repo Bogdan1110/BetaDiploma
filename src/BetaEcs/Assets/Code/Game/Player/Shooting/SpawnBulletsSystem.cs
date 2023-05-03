@@ -29,10 +29,10 @@ namespace Beta
 
 				var networkIdentity = player.networkIdentity.Value;
 				var netId = networkIdentity.netId;
-				var targetPosition = ServicesMediator.CursorWorldPosition;
 				var playerPosition = player.position.Value;
+				var targetPosition = ServicesMediator.CursorWorldPosition;
 
-				var bulletSpawner = networkIdentity.GetComponent<BulletSpawner>();
+				var bulletSpawner = player.bulletSpawner.Value;
 				bulletSpawner.SpawnBullet(netId, playerPosition, targetPosition);
 			}
 		}

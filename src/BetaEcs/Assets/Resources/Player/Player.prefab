@@ -213,6 +213,7 @@ MonoBehaviour:
   _networkIdentity: {fileID: 4548477921731388363}
   _positionView: {fileID: -7134011056245746711}
   _rotationView: {fileID: 3833584321183733399}
+  _bulletSpawner: {fileID: 7682702384283839512}
 --- !u!114 &7682702384283839512
 MonoBehaviour:
   m_ObjectHideFlags: 0
