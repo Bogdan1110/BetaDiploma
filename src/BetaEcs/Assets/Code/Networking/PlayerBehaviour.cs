@@ -16,6 +16,7 @@ namespace Beta
 		private void Start()
 		{
 			var e = Contexts.sharedInstance.game.CreateEntity();
+			e.AddDebugName($"Player (netId: {netId})");
 			e.isPlayer = true;
 			e.isHittable = true;
 			e.AddId(netId);

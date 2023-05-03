@@ -14,6 +14,7 @@ namespace Beta
 		public void Initialize(uint ownerId, Vector2 target)
 		{
 			var e = Contexts.sharedInstance.game.CreateEntity();
+			e.AddDebugName("Bullet");
 			e.isBullet = true;
 			e.isDestroyUponReachingTarget = true;
 			e.AddId(netId);

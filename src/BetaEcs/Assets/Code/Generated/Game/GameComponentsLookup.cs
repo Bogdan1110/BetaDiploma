@@ -32,11 +32,12 @@ public static class GameComponentsLookup {
     public const int Speed = 21;
     public const int TargetPosition = 22;
     public const int CurrentHealthListener = 23;
-    public const int MaxHealthListener = 24;
-    public const int PositionListener = 25;
-    public const int RotationListener = 26;
+    public const int DebugName = 24;
+    public const int MaxHealthListener = 25;
+    public const int PositionListener = 26;
+    public const int RotationListener = 27;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 28;
 
     public static readonly string[] componentNames = {
         "Bullet",
@@ -63,6 +64,7 @@ public static class GameComponentsLookup {
         "Speed",
         "TargetPosition",
         "CurrentHealthListener",
+        "DebugName",
         "MaxHealthListener",
         "PositionListener",
         "RotationListener"
@@ -93,6 +95,7 @@ public static class GameComponentsLookup {
         typeof(Beta.SpeedComponent),
         typeof(Beta.TargetPositionComponent),
         typeof(CurrentHealthListenerComponent),
+        typeof(GameEntityTools.DebugNameComponent),
         typeof(MaxHealthListenerComponent),
         typeof(PositionListenerComponent),
         typeof(RotationListenerComponent)
