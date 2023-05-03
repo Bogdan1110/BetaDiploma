@@ -22,18 +22,15 @@ namespace Beta
 		{
 			foreach (var player in _players)
 			{
-				if (player.IsOwned() == false)
+				if (player.IsOwned())
 				{
-					continue;
+					player.bulletSpawner.Value.SpawnBullet
+					(
+						ownerId: player.instanceId.Value,
+						from: player.position.Value,
+						to: ServicesMediator.CursorWorldPosition
+					);
 				}
-
-				var networkIdentity = player.networkIdentity.Value;
-				var netId = networkIdentity.netId;
-				var playerPosition = player.position.Value;
-				var targetPosition = ServicesMediator.CursorWorldPosition;
-
-				var bulletSpawner = player.bulletSpawner.Value;
-				bulletSpawner.SpawnBullet(netId, playerPosition, targetPosition);
 			}
 		}
 	}

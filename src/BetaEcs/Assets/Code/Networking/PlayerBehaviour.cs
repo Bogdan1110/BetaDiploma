@@ -20,6 +20,7 @@ namespace Beta
 			e.AddRotation(0f);
 			e.AddRotationListener(_rotationView);
 			e.AddBulletSpawner(_bulletSpawner);
+			e.AddInstanceId(GetInstanceID());
 		}
 	}
 }

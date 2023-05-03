@@ -8,23 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int BulletSpawner = 0;
-    public const int Cursor = 1;
-    public const int Destroy = 2;
-    public const int InstanceId = 3;
-    public const int LookAt = 4;
-    public const int NetId = 5;
-    public const int NetworkIdentity = 6;
-    public const int Player = 7;
-    public const int Position = 8;
-    public const int Rotation = 9;
-    public const int Shoot = 10;
-    public const int PositionListener = 11;
-    public const int RotationListener = 12;
+    public const int Bullet = 0;
+    public const int BulletSpawner = 1;
+    public const int Cursor = 2;
+    public const int Destroy = 3;
+    public const int InstanceId = 4;
+    public const int LookAt = 5;
+    public const int NetId = 6;
+    public const int NetworkIdentity = 7;
+    public const int OwnerInstanceId = 8;
+    public const int Player = 9;
+    public const int Position = 10;
+    public const int Rotation = 11;
+    public const int Shoot = 12;
+    public const int TargetPosition = 13;
+    public const int PositionListener = 14;
+    public const int RotationListener = 15;
 
-    public const int TotalComponents = 13;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
+        "Bullet",
         "BulletSpawner",
         "Cursor",
         "Destroy",
@@ -32,15 +36,18 @@ public static class GameComponentsLookup {
         "LookAt",
         "NetId",
         "NetworkIdentity",
+        "OwnerInstanceId",
         "Player",
         "Position",
         "Rotation",
         "Shoot",
+        "TargetPosition",
         "PositionListener",
         "RotationListener"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Beta.BulletComponent),
         typeof(Beta.BulletSpawnerComponent),
         typeof(Beta.CursorComponent),
         typeof(Beta.DestroyComponent),
@@ -48,10 +55,12 @@ public static class GameComponentsLookup {
         typeof(Beta.LookAtComponent),
         typeof(Beta.NetIdComponent),
         typeof(Beta.NetworkIdentityComponent),
+        typeof(Beta.OwnerInstanceIdComponent),
         typeof(Beta.PlayerComponent),
         typeof(Beta.PositionComponent),
         typeof(Beta.RotationComponent),
         typeof(Beta.ShootComponent),
+        typeof(Beta.TargetPositionComponent),
         typeof(PositionListenerComponent),
         typeof(RotationListenerComponent)
     };
