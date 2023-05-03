@@ -15,7 +15,7 @@ namespace Beta
 		// ReSharper disable once NotAccessedField.Local - mirror
 		[SyncVar(hook = nameof(SyncMaxHealth))] private int _syncMaxHealth;
 
-		private void Start() => _healthBar.maxValue = _maxHealth;
+		private void Start() => UpdateHealthBar();
 
 		public void OnCurrentHealth(GameEntity entity, int value)
 		{
