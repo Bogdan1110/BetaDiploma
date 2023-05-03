@@ -503,6 +503,7 @@ MonoBehaviour:
   _positionView: {fileID: -7134011056245746711}
   _rotationView: {fileID: 3833584321183733399}
   _bulletSpawner: {fileID: 7682702384283839512}
+  _healthBar: {fileID: 3459767239828393387}
 --- !u!114 &7682702384283839512
 MonoBehaviour:
   m_ObjectHideFlags: 0

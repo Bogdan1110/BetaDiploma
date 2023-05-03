@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField:
     <Speed>k__BackingField: 3
+    <MaxHealth>k__BackingField: 10
   <Bullet>k__BackingField:
     <Speed>k__BackingField: 5
+    <Radius>k__BackingField: 0.025
+    <Damage>k__BackingField: 1
