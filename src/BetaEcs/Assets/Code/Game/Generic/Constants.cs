@@ -7,6 +7,7 @@ namespace Beta
 		public static class ResourcePath
 		{
 			public const string Balance = "Balance/Balance";
+			public const string Cursor = "Player/Cursor";
 		}
 	}
 }
