@@ -7,7 +7,7 @@ namespace Beta
 	{
 		private readonly IGroup<GameEntity> _entities;
 
-		public ResetBalanceValuesSystem(Contexts contexts) => _entities = contexts.game.GetGroup(AnyOf(Player, Bullet));
+		public ResetBalanceValuesSystem(Contexts contexts) => _entities = contexts.game.GetGroup(Speed);
 
 		public void Execute()
 		{
@@ -15,12 +15,12 @@ namespace Beta
 			{
 				if (e.isPlayer)
 				{
-					e.ReplaceSpeed(ServicesMediator.Balance.Player.Speed);
+					e.speed.Value = ServicesMediator.Balance.Player.Speed;
 				}
 
 				if (e.isBullet)
 				{
-					e.ReplaceSpeed(ServicesMediator.Balance.Bullet.Speed);
+					e.speed.Value = ServicesMediator.Balance.Bullet.Speed;
 				}
 			}
 		}

@@ -16,6 +16,7 @@ namespace Beta
 			e.AddPositionListener(_positionView);
 			e.AddTargetPosition(target);
 			e.AddOwnerInstanceId(ownerInstanceId);
+			e.AddSpeed(ServicesMediator.Balance.Bullet.Speed);
 		}
 	}
 }

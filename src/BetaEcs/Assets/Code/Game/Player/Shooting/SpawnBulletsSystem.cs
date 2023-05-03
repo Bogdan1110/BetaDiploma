@@ -20,14 +20,14 @@ namespace Beta
 
 		protected override void Execute(List<GameEntity> shoots)
 		{
-			foreach (var player in _players)
+			foreach (var e in _players)
 			{
-				if (player.IsOwned())
+				if (e.IsOwned())
 				{
-					player.bulletSpawner.Value.SpawnBullet
+					e.bulletSpawner.Value.SpawnBullet
 					(
-						ownerId: player.instanceId.Value,
-						from: player.position.Value,
+						ownerId: e.instanceId.Value,
+						from: e.position.Value,
 						to: ServicesMediator.CursorWorldPosition
 					);
 				}

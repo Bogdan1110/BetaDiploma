@@ -12,27 +12,29 @@ public static class GameComponentsLookup {
     public const int BulletSpawner = 1;
     public const int Cursor = 2;
     public const int Destroy = 3;
-    public const int InstanceId = 4;
-    public const int LookAt = 5;
-    public const int NetId = 6;
-    public const int NetworkIdentity = 7;
-    public const int OwnerInstanceId = 8;
-    public const int Player = 9;
-    public const int Position = 10;
-    public const int Rotation = 11;
-    public const int Shoot = 12;
-    public const int Speed = 13;
-    public const int TargetPosition = 14;
-    public const int PositionListener = 15;
-    public const int RotationListener = 16;
+    public const int DestroyUponReachingTarget = 4;
+    public const int InstanceId = 5;
+    public const int LookAt = 6;
+    public const int NetId = 7;
+    public const int NetworkIdentity = 8;
+    public const int OwnerInstanceId = 9;
+    public const int Player = 10;
+    public const int Position = 11;
+    public const int Rotation = 12;
+    public const int Shoot = 13;
+    public const int Speed = 14;
+    public const int TargetPosition = 15;
+    public const int PositionListener = 16;
+    public const int RotationListener = 17;
 
-    public const int TotalComponents = 17;
+    public const int TotalComponents = 18;
 
     public static readonly string[] componentNames = {
         "Bullet",
         "BulletSpawner",
         "Cursor",
         "Destroy",
+        "DestroyUponReachingTarget",
         "InstanceId",
         "LookAt",
         "NetId",
@@ -53,6 +55,7 @@ public static class GameComponentsLookup {
         typeof(Beta.BulletSpawnerComponent),
         typeof(Beta.CursorComponent),
         typeof(Beta.DestroyComponent),
+        typeof(Beta.DestroyUponReachingTargetComponent),
         typeof(Beta.InstanceIdComponent),
         typeof(Beta.LookAtComponent),
         typeof(Beta.NetIdComponent),

@@ -38,6 +38,9 @@ namespace Beta
 
 			Add(new MoveToTargetSystem(contexts));
 			Add(new LookAtTargetSystem(contexts));
+
+			Add(new DestroyReachedTargetEntitesSystem(contexts));
+			Add(new DestroyNetworkBehaviourSystem(contexts));
 		}
 
 		private void RegisterServices(Contexts contexts) => Add(new ServicesRegistrationFeature(contexts));

@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Beta.DestroyComponent destroyComponent = new Beta.DestroyComponent();
+    static readonly Beta.DestroyUponReachingTargetComponent destroyUponReachingTargetComponent = new Beta.DestroyUponReachingTargetComponent();
 
-    public bool markToDestroy {
-        get { return HasComponent(GameComponentsLookup.Destroy); }
+    public bool isDestroyUponReachingTarget {
+        get { return HasComponent(GameComponentsLookup.DestroyUponReachingTarget); }
         set {
-            if (value != markToDestroy) {
-                var index = GameComponentsLookup.Destroy;
+            if (value != isDestroyUponReachingTarget) {
+                var index = GameComponentsLookup.DestroyUponReachingTarget;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : destroyComponent;
+                            : destroyUponReachingTargetComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherDestroy;
+    static Entitas.IMatcher<GameEntity> _matcherDestroyUponReachingTarget;
 
-    public static Entitas.IMatcher<GameEntity> Destroy {
+    public static Entitas.IMatcher<GameEntity> DestroyUponReachingTarget {
         get {
-            if (_matcherDestroy == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Destroy);
+            if (_matcherDestroyUponReachingTarget == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DestroyUponReachingTarget);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherDestroy = matcher;
+                _matcherDestroyUponReachingTarget = matcher;
             }
 
-            return _matcherDestroy;
+            return _matcherDestroyUponReachingTarget;
         }
     }
 }

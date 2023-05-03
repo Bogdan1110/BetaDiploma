@@ -14,7 +14,7 @@ namespace Beta
 			{
 				var shootSignal = _contexts.game.CreateEntity();
 				shootSignal.isShoot = true;
-				shootSignal.isDestroy = true;
+				shootSignal.markToDestroy = true;
 			}
 		}
 	}
