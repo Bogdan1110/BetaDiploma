@@ -7,12 +7,20 @@ namespace Beta
 		public Vector2 MovementDirection { get; }
 
 		public Vector2 CursorPosition { get; }
+
+		bool IsLeftMouseButtonClicked { get; }
 	}
 
 	public class OldInputService : IInputService
 	{
-		public Vector2 MovementDirection => new(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+		private const int LeftMouseButton = 0;
+		private const string HorizontalAxis = "Horizontal";
+		private const string VerticalAxis = "Vertical";
+
+		public Vector2 MovementDirection => new(Input.GetAxis(HorizontalAxis), Input.GetAxis(VerticalAxis));
 
 		public Vector2 CursorPosition => Input.mousePosition;
+
+		public bool IsLeftMouseButtonClicked => Input.GetMouseButtonDown(LeftMouseButton);
 	}
 }

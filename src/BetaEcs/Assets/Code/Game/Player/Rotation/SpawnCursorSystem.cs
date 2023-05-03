@@ -13,7 +13,7 @@ namespace Beta
 		{
 			var e = _contexts.game.CreateEntity();
 			e.isCursor = true;
-			e.AddPosition(Services.Input.CursorPosition);
+			e.AddPosition(ServicesMediator.Input.CursorPosition);
 			e.AddPositionListener(SpawnPrefab());
 		}
 

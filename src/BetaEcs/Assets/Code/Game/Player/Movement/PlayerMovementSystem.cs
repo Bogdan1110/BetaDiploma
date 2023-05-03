@@ -12,9 +12,9 @@ namespace Beta
 		public PlayerMovementSystem(Contexts contexts)
 			=> _entities = contexts.game.GetGroup(AllOf(Player, Position, NetworkIdentity));
 
-		private static Vector2 Movement => Services.Input.MovementDirection
-		                                   * Services.Time.DeltaTime
-		                                   * Services.Balance.Player.Speed;
+		private static Vector2 Movement => ServicesMediator.Input.MovementDirection
+		                                   * ServicesMediator.Time.DeltaTime
+		                                   * ServicesMediator.Balance.Player.Speed;
 
 		public void Execute()
 		{

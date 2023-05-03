@@ -8,35 +8,77 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Cursor = 0;
-    public const int LookAt = 1;
-    public const int NetworkIdentity = 2;
-    public const int Player = 3;
-    public const int Position = 4;
-    public const int Rotation = 5;
-    public const int PositionListener = 6;
-    public const int RotationListener = 7;
+    public const int Bullet = 0;
+    public const int BulletSpawner = 1;
+    public const int Collided = 2;
+    public const int CollisionId = 3;
+    public const int Cursor = 4;
+    public const int Destroy = 5;
+    public const int DestroyUponReachingTarget = 6;
+    public const int Hit = 7;
+    public const int Hittable = 8;
+    public const int Id = 9;
+    public const int LookAt = 10;
+    public const int NetworkIdentity = 11;
+    public const int OverlapCircleRadius = 12;
+    public const int OwnerId = 13;
+    public const int Player = 14;
+    public const int Position = 15;
+    public const int Rotation = 16;
+    public const int Shoot = 17;
+    public const int Speed = 18;
+    public const int TargetPosition = 19;
+    public const int PositionListener = 20;
+    public const int RotationListener = 21;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 22;
 
     public static readonly string[] componentNames = {
+        "Bullet",
+        "BulletSpawner",
+        "Collided",
+        "CollisionId",
         "Cursor",
+        "Destroy",
+        "DestroyUponReachingTarget",
+        "Hit",
+        "Hittable",
+        "Id",
         "LookAt",
         "NetworkIdentity",
+        "OverlapCircleRadius",
+        "OwnerId",
         "Player",
         "Position",
         "Rotation",
+        "Shoot",
+        "Speed",
+        "TargetPosition",
         "PositionListener",
         "RotationListener"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Beta.BulletComponent),
+        typeof(Beta.BulletSpawnerComponent),
+        typeof(Beta.CollidedComponent),
+        typeof(Beta.CollisionIdComponent),
         typeof(Beta.CursorComponent),
+        typeof(Beta.DestroyComponent),
+        typeof(Beta.DestroyUponReachingTargetComponent),
+        typeof(Beta.HitComponent),
+        typeof(Beta.HittableComponent),
+        typeof(Beta.IdComponent),
         typeof(Beta.LookAtComponent),
         typeof(Beta.NetworkIdentityComponent),
+        typeof(Beta.OverlapCircleRadiusComponent),
+        typeof(Beta.OwnerIdComponent),
         typeof(Beta.PlayerComponent),
         typeof(Beta.PositionComponent),
         typeof(Beta.RotationComponent),
+        typeof(Beta.ShootComponent),
+        typeof(Beta.SpeedComponent),
+        typeof(Beta.TargetPositionComponent),
         typeof(PositionListenerComponent),
         typeof(RotationListenerComponent)
     };
