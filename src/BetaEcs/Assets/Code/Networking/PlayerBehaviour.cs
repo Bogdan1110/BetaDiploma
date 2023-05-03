@@ -14,6 +14,7 @@ namespace Beta
 		[SerializeField] private int _maxHealth;
 		[SerializeField] private Slider _healthBar;
 
+		// ReSharper disable once NotAccessedField.Local - mirror
 		[SyncVar(hook = nameof(SyncHealth))] private int _syncHealth;
 
 		private void Start()
@@ -34,8 +35,6 @@ namespace Beta
 
 		private void Update()
 		{
-			_healthBar.value = _health;
-
 			if (isOwned)
 			{
 				if (Input.GetKeyDown(KeyCode.H))
@@ -50,14 +49,15 @@ namespace Beta
 					}
 				}
 			}
+
+			_healthBar.value = _health;
 		}
 
+		// ReSharper disable once UnusedParameter.Local - mirror
 		private void SyncHealth(int oldValue, int newValue) => _health = newValue;
 
-		[Command]
-		public void CmdChangeHealth(int newValue) => ChangeHealthValue(newValue);
+		[Command] private void CmdChangeHealth(int newValue) => ChangeHealthValue(newValue);
 
-		[Server]
-		public void ChangeHealthValue(int newValue) => _syncHealth = newValue;
+		[Server] private void ChangeHealthValue(int newValue) => _syncHealth = newValue;
 	}
 }
