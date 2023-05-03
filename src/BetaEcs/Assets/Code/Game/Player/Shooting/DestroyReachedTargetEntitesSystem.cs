@@ -8,7 +8,7 @@ namespace Beta
 		private readonly IGroup<GameEntity> _entities;
 
 		public DestroyReachedTargetEntitesSystem(Contexts contexts) 
-			=> _entities = contexts.game.GetGroup(AllOf(Position, TargetPosition));
+			=> _entities = contexts.game.GetGroup(AllOf(Position, TargetPosition, DestroyUponReachingTarget));
 
 		public void Execute()
 		{

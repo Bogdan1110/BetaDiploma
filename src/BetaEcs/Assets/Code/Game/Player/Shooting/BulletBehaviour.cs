@@ -15,6 +15,7 @@ namespace Beta
 		{
 			var e = Contexts.sharedInstance.game.CreateEntity();
 			e.isBullet = true;
+			e.isDestroyUponReachingTarget = true;
 			e.AddId(netId);
 			e.AddPosition(transform.position);
 			e.AddPositionListener(_positionView);
