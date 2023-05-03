@@ -14,13 +14,13 @@ namespace Beta
 		{
 			var e = Contexts.sharedInstance.game.CreateEntity();
 			e.isPlayer = true;
+			e.AddId(gameObject.GetInstanceID());
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddPosition(transform.position);
 			e.AddPositionListener(_positionView);
 			e.AddRotation(0f);
 			e.AddRotationListener(_rotationView);
 			e.AddBulletSpawner(_bulletSpawner);
-			e.AddId(GetInstanceID());
 		}
 	}
 }

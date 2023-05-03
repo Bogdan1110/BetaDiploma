@@ -15,6 +15,7 @@ namespace Beta
 		{
 			var e = Contexts.sharedInstance.game.CreateEntity();
 			e.isBullet = true;
+			e.AddId(gameObject.GetInstanceID());
 			e.AddPosition(transform.position);
 			e.AddPositionListener(_positionView);
 			e.AddTargetPosition(target);
@@ -22,7 +23,6 @@ namespace Beta
 			e.AddSpeed(Balance.Speed);
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddOverlapCircleRadius(Balance.Radius);
-			e.AddId(GetInstanceID());
 		}
 	}
 }

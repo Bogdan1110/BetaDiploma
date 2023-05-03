@@ -18,7 +18,7 @@ namespace Beta
 
 		private GameEntity CollidedEntity => _contexts.game.GetEntityWithId(CollisionInstanceID);
 
-		private int CollisionInstanceID => _buffer[0].GetInstanceID();
+		private int CollisionInstanceID => _buffer[0].gameObject.GetInstanceID();
 
 		public void Execute()
 		{

@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Beta.OwnerInstanceIdComponent ownerInstanceId { get { return (Beta.OwnerInstanceIdComponent)GetComponent(GameComponentsLookup.OwnerInstanceId); } }
-    public bool hasOwnerInstanceId { get { return HasComponent(GameComponentsLookup.OwnerInstanceId); } }
+    public Beta.OwnerIdComponent ownerId { get { return (Beta.OwnerIdComponent)GetComponent(GameComponentsLookup.OwnerId); } }
+    public bool hasOwnerId { get { return HasComponent(GameComponentsLookup.OwnerId); } }
 
     public void AddOwnerId(int newValue) {
-        var index = GameComponentsLookup.OwnerInstanceId;
-        var component = (Beta.OwnerInstanceIdComponent)CreateComponent(index, typeof(Beta.OwnerInstanceIdComponent));
+        var index = GameComponentsLookup.OwnerId;
+        var component = (Beta.OwnerIdComponent)CreateComponent(index, typeof(Beta.OwnerIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceOwnerInstanceId(int newValue) {
-        var index = GameComponentsLookup.OwnerInstanceId;
-        var component = (Beta.OwnerInstanceIdComponent)CreateComponent(index, typeof(Beta.OwnerInstanceIdComponent));
+    public void ReplaceOwnerId(int newValue) {
+        var index = GameComponentsLookup.OwnerId;
+        var component = (Beta.OwnerIdComponent)CreateComponent(index, typeof(Beta.OwnerIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }
 
-    public void RemoveOwnerInstanceId() {
-        RemoveComponent(GameComponentsLookup.OwnerInstanceId);
+    public void RemoveOwnerId() {
+        RemoveComponent(GameComponentsLookup.OwnerId);
     }
 }
 
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherOwnerInstanceId;
+    static Entitas.IMatcher<GameEntity> _matcherOwnerId;
 
-    public static Entitas.IMatcher<GameEntity> OwnerInstanceId {
+    public static Entitas.IMatcher<GameEntity> OwnerId {
         get {
-            if (_matcherOwnerInstanceId == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.OwnerInstanceId);
+            if (_matcherOwnerId == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.OwnerId);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherOwnerInstanceId = matcher;
+                _matcherOwnerId = matcher;
             }
 
-            return _matcherOwnerInstanceId;
+            return _matcherOwnerId;
         }
     }
 }

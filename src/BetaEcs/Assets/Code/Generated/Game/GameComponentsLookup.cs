@@ -15,21 +15,22 @@ public static class GameComponentsLookup {
     public const int Cursor = 4;
     public const int Destroy = 5;
     public const int DestroyUponReachingTarget = 6;
-    public const int Id = 7;
-    public const int LookAt = 8;
-    public const int NetworkIdentity = 9;
-    public const int OverlapCircleRadius = 10;
-    public const int OwnerInstanceId = 11;
-    public const int Player = 12;
-    public const int Position = 13;
-    public const int Rotation = 14;
-    public const int Shoot = 15;
-    public const int Speed = 16;
-    public const int TargetPosition = 17;
-    public const int PositionListener = 18;
-    public const int RotationListener = 19;
+    public const int Hit = 7;
+    public const int Id = 8;
+    public const int LookAt = 9;
+    public const int NetworkIdentity = 10;
+    public const int OverlapCircleRadius = 11;
+    public const int OwnerId = 12;
+    public const int Player = 13;
+    public const int Position = 14;
+    public const int Rotation = 15;
+    public const int Shoot = 16;
+    public const int Speed = 17;
+    public const int TargetPosition = 18;
+    public const int PositionListener = 19;
+    public const int RotationListener = 20;
 
-    public const int TotalComponents = 20;
+    public const int TotalComponents = 21;
 
     public static readonly string[] componentNames = {
         "Bullet",
@@ -39,11 +40,12 @@ public static class GameComponentsLookup {
         "Cursor",
         "Destroy",
         "DestroyUponReachingTarget",
+        "Hit",
         "Id",
         "LookAt",
         "NetworkIdentity",
         "OverlapCircleRadius",
-        "OwnerInstanceId",
+        "OwnerId",
         "Player",
         "Position",
         "Rotation",
@@ -62,11 +64,12 @@ public static class GameComponentsLookup {
         typeof(Beta.CursorComponent),
         typeof(Beta.DestroyComponent),
         typeof(Beta.DestroyUponReachingTargetComponent),
+        typeof(Beta.HitComponent),
         typeof(Beta.IdComponent),
         typeof(Beta.LookAtComponent),
         typeof(Beta.NetworkIdentityComponent),
         typeof(Beta.OverlapCircleRadiusComponent),
-        typeof(Beta.OwnerInstanceIdComponent),
+        typeof(Beta.OwnerIdComponent),
         typeof(Beta.PlayerComponent),
         typeof(Beta.PositionComponent),
         typeof(Beta.RotationComponent),

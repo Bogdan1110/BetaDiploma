@@ -16,7 +16,7 @@ namespace Beta
 	
 	[Game] public sealed class TargetPositionComponent : IComponent { public Vector2 Value; }
 	
-	[Game] public sealed class OwnerInstanceIdComponent : IComponent { [EntityIndex] public int Value; }
+	[Game] public sealed class OwnerIdComponent : IComponent { [EntityIndex] public int Value; }
 	
 	[Game] public sealed class SpeedComponent : IComponent { public float Value; }
 	
@@ -27,4 +27,6 @@ namespace Beta
 	[Game] public sealed class CollidedComponent : IComponent { }
 
 	[Game] public sealed class CollisionIdComponent : IComponent { public int Value; }
+
+	[Game] public sealed class HitComponent : IComponent { }
 }
