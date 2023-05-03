@@ -35,11 +35,6 @@ namespace Beta
 
 		public void OnCurrentHealth(GameEntity entity, int value)
 		{
-			if (isOwned == false)
-			{
-				return;
-			}
-
 			if (isServer)
 			{
 				ChangeHealthValue(value);
@@ -54,11 +49,6 @@ namespace Beta
 
 		public void OnMaxHealth(GameEntity entity, int value)
 		{
-			if (isOwned == false)
-			{
-				return;
-			}
-
 			if (isServer)
 			{
 				CmdChangeMaxHealth(value);
