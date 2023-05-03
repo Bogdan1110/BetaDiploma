@@ -14,6 +14,7 @@ namespace Beta
 		{
 			var e = Contexts.sharedInstance.game.CreateEntity();
 			e.isPlayer = true;
+			e.isHittable = true;
 			e.AddId(gameObject.GetInstanceID());
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddPosition(transform.position);

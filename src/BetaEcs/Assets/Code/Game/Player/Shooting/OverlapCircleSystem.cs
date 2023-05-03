@@ -24,7 +24,8 @@ namespace Beta
 		{
 			foreach (var e in _entities)
 			{
-				if (IsAnyOverlapped(e))
+				if (IsAnyOverlapped(e)
+				    && (e.hasOwnerId == false || e.ownerId.Value != CollisionInstanceID))
 				{
 					e.MutualCollideWith(CollidedEntity);
 				}
@@ -33,10 +34,11 @@ namespace Beta
 
 		private bool IsAnyOverlapped(GameEntity entity)
 			=> ServicesMediator.Physics.OverlapCircleNonAlloc
-			(
-				point: entity.position.Value,
-				radius: entity.overlapCircleRadius.Value,
-				buffer: _buffer
-			) > 0;
+			   (
+				   point: entity.position.Value,
+				   radius: entity.overlapCircleRadius.Value,
+				   buffer: _buffer
+			   )
+			   > 0;
 	}
 }

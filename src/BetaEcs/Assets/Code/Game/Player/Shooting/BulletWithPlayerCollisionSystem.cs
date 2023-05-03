@@ -7,24 +7,23 @@ namespace Beta
 	public sealed class BulletWithPlayerCollisionSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _bullets;
-		private readonly IGroup<GameEntity> _targets;
+		private readonly IGroup<GameEntity> _hittables;
 
 		public BulletWithPlayerCollisionSystem(Contexts contexts)
 		{
-			_bullets = contexts.game.GetGroup(AllOf(Collided, CollisionId));
-			_targets = contexts.game.GetGroup(AllOf(Collided, Id));
+			_bullets = contexts.game.GetGroup(AllOf(Bullet, Collided, CollisionId));
+			_hittables = contexts.game.GetGroup(AllOf(Hittable, Collided, Id).NoneOf(Hit));
 		}
 
 		public void Execute()
 		{
-			foreach (var target in _targets)
+			foreach (var hittable in _hittables)
 			foreach (var bullet in _bullets)
 			{
-				if (target.id.Value == bullet.collisionId.Value
-				    || bullet.id.Value == target.collisionId.Value)
+				if (hittable.id.Value == bullet.collisionId.Value)
 				{
-					target.isHit = true;
-					Debug.Log($"target {target.id} is hit");
+					hittable.isHit = true;
+					Debug.Log($"target id {hittable.id.Value}\n bullet.id {bullet.id.Value}\n bullet owner {bullet.ownerId.Value}");
 				}
 			}
 		}

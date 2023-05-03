@@ -24,9 +24,11 @@ namespace Beta
 	
 	[Game] public sealed class OverlapCircleRadiusComponent : IComponent { public float Value; }
 	
-	[Game] public sealed class CollidedComponent : IComponent { }
+	[Game] [Cleanup(CleanupMode.RemoveComponent)] public sealed class CollidedComponent : IComponent { }
 
-	[Game] public sealed class CollisionIdComponent : IComponent { public int Value; }
+	[Game] [Cleanup(CleanupMode.RemoveComponent)] public sealed class CollisionIdComponent : IComponent { [EntityIndex] public int Value; }
 
 	[Game] public sealed class HitComponent : IComponent { }
+
+	[Game] public sealed class HittableComponent : IComponent { }
 }
