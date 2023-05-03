@@ -15,12 +15,24 @@ namespace Beta
 		// ReSharper disable once NotAccessedField.Local - mirror
 		[SyncVar(hook = nameof(SyncMaxHealth))] private int _syncMaxHealth;
 
-		private void Start() => UpdateHealthBar();
+		public void RegisterListener(GameEntity e)
+		{
+			e.AddCurrentHealthListener(this);
+			e.AddMaxHealthListener(this);
+
+			if (e.hasCurrentHealth)
+			{
+				OnCurrentHealth(e, e.currentHealth.Value);
+			}
+
+			if (e.hasMaxHealth)
+			{
+				OnMaxHealth(e, e.currentHealth.Value);
+			}
+		}
 
 		public void OnCurrentHealth(GameEntity entity, int value)
 		{
-			Debug.Log($"isOwned = {isOwned}, value = {value}");
-
 			if (isOwned == false)
 			{
 				return;
@@ -60,7 +72,7 @@ namespace Beta
 		private void UpdateHealthBar()
 		{
 			_healthBar.value = _health;
-			_healthBar.value = _maxHealth;
+			_healthBar.maxValue = _maxHealth;
 		}
 
 		// ReSharper disable once UnusedParameter.Local - mirror

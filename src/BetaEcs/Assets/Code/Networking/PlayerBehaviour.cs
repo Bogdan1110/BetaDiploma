@@ -39,10 +39,9 @@ namespace Beta
 		private void HealthSetup(GameEntity e)
 		{
 			e.AddCurrentHealth(Balance.MaxHealth);
-			e.AddCurrentHealthListener(_healthBar);
-
 			e.AddMaxHealth(Balance.MaxHealth);
-			e.AddMaxHealthListener(_healthBar);
+			
+			_healthBar.RegisterListener(e);
 		}
 	}
 }
