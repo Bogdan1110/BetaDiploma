@@ -23,6 +23,7 @@ namespace Beta
 				    && hittable.isHit == false)
 				{
 					hittable.isHit = true;
+					hittable.AddDamageDealt(bullet.damage.Value);
 				}
 			}
 		}

@@ -14,28 +14,30 @@ public static class GameComponentsLookup {
     public const int CollisionId = 3;
     public const int CurrentHealth = 4;
     public const int Cursor = 5;
-    public const int Destroy = 6;
-    public const int DestroyUponReachingTarget = 7;
-    public const int Hit = 8;
-    public const int Hittable = 9;
-    public const int Id = 10;
-    public const int LookAt = 11;
-    public const int MaxHealth = 12;
-    public const int NetworkIdentity = 13;
-    public const int OverlapCircleRadius = 14;
-    public const int OwnerId = 15;
-    public const int Player = 16;
-    public const int Position = 17;
-    public const int Rotation = 18;
-    public const int Shoot = 19;
-    public const int Speed = 20;
-    public const int TargetPosition = 21;
-    public const int CurrentHealthListener = 22;
-    public const int MaxHealthListener = 23;
-    public const int PositionListener = 24;
-    public const int RotationListener = 25;
+    public const int Damage = 6;
+    public const int DamageDealt = 7;
+    public const int Destroy = 8;
+    public const int DestroyUponReachingTarget = 9;
+    public const int Hit = 10;
+    public const int Hittable = 11;
+    public const int Id = 12;
+    public const int LookAt = 13;
+    public const int MaxHealth = 14;
+    public const int NetworkIdentity = 15;
+    public const int OverlapCircleRadius = 16;
+    public const int OwnerId = 17;
+    public const int Player = 18;
+    public const int Position = 19;
+    public const int Rotation = 20;
+    public const int Shoot = 21;
+    public const int Speed = 22;
+    public const int TargetPosition = 23;
+    public const int CurrentHealthListener = 24;
+    public const int MaxHealthListener = 25;
+    public const int PositionListener = 26;
+    public const int RotationListener = 27;
 
-    public const int TotalComponents = 26;
+    public const int TotalComponents = 28;
 
     public static readonly string[] componentNames = {
         "Bullet",
@@ -44,6 +46,8 @@ public static class GameComponentsLookup {
         "CollisionId",
         "CurrentHealth",
         "Cursor",
+        "Damage",
+        "DamageDealt",
         "Destroy",
         "DestroyUponReachingTarget",
         "Hit",
@@ -73,6 +77,8 @@ public static class GameComponentsLookup {
         typeof(Beta.CollisionIdComponent),
         typeof(Beta.CurrentHealthComponent),
         typeof(Beta.CursorComponent),
+        typeof(Beta.DamageComponent),
+        typeof(Beta.DamageDealtComponent),
         typeof(Beta.DestroyComponent),
         typeof(Beta.DestroyUponReachingTargetComponent),
         typeof(Beta.HitComponent),
