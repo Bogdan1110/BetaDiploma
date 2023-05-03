@@ -35,7 +35,8 @@ namespace Beta
 				var targetPosition = ServicesMediator.CursorWorldPosition;
 				var playerPosition = player.position.Value;
 
-				BulletSpawner.SpawnBullet(netId, playerPosition, targetPosition);
+				var bulletSpawner = networkIdentity.GetComponent<BulletSpawner>();
+				bulletSpawner.SpawnBullet(netId, playerPosition, targetPosition);
 			}
 		}
 	}

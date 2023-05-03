@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: -7134011056245746711}
   - component: {fileID: 3833584321183733399}
   - component: {fileID: 5025197517657455112}
+  - component: {fileID: 7682702384283839512}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -212,3 +213,19 @@ MonoBehaviour:
   _networkIdentity: {fileID: 4548477921731388363}
   _positionView: {fileID: -7134011056245746711}
   _rotationView: {fileID: 3833584321183733399}
+--- !u!114 &7682702384283839512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8690364494154901087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3992b4fb97094eae9667b2b3267930da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _bulletPrefab: {fileID: 2166266742416889041, guid: 541ac7696fff85076b615c812f601f80, type: 3}

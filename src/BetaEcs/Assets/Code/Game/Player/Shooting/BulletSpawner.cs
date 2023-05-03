@@ -19,7 +19,7 @@ namespace Beta
 			}
 		}
 
-		[Command(requiresAuthority = true)]
+		[Command]
 		private void CmdSpawnBullet(uint owner, Vector2 target, Vector2 position)
 			=> SpawnBulletOnServer(owner, target, position);
 
