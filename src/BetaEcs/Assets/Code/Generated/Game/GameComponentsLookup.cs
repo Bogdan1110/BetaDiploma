@@ -12,32 +12,37 @@ public static class GameComponentsLookup {
     public const int BulletSpawner = 1;
     public const int Collided = 2;
     public const int CollisionId = 3;
-    public const int Cursor = 4;
-    public const int Destroy = 5;
-    public const int DestroyUponReachingTarget = 6;
-    public const int Hit = 7;
-    public const int Hittable = 8;
-    public const int Id = 9;
-    public const int LookAt = 10;
-    public const int NetworkIdentity = 11;
-    public const int OverlapCircleRadius = 12;
-    public const int OwnerId = 13;
-    public const int Player = 14;
-    public const int Position = 15;
-    public const int Rotation = 16;
-    public const int Shoot = 17;
-    public const int Speed = 18;
-    public const int TargetPosition = 19;
-    public const int PositionListener = 20;
-    public const int RotationListener = 21;
+    public const int CurrentHealth = 4;
+    public const int Cursor = 5;
+    public const int Destroy = 6;
+    public const int DestroyUponReachingTarget = 7;
+    public const int Hit = 8;
+    public const int Hittable = 9;
+    public const int Id = 10;
+    public const int LookAt = 11;
+    public const int MaxHealth = 12;
+    public const int NetworkIdentity = 13;
+    public const int OverlapCircleRadius = 14;
+    public const int OwnerId = 15;
+    public const int Player = 16;
+    public const int Position = 17;
+    public const int Rotation = 18;
+    public const int Shoot = 19;
+    public const int Speed = 20;
+    public const int TargetPosition = 21;
+    public const int CurrentHealthListener = 22;
+    public const int MaxHealthListener = 23;
+    public const int PositionListener = 24;
+    public const int RotationListener = 25;
 
-    public const int TotalComponents = 22;
+    public const int TotalComponents = 26;
 
     public static readonly string[] componentNames = {
         "Bullet",
         "BulletSpawner",
         "Collided",
         "CollisionId",
+        "CurrentHealth",
         "Cursor",
         "Destroy",
         "DestroyUponReachingTarget",
@@ -45,6 +50,7 @@ public static class GameComponentsLookup {
         "Hittable",
         "Id",
         "LookAt",
+        "MaxHealth",
         "NetworkIdentity",
         "OverlapCircleRadius",
         "OwnerId",
@@ -54,6 +60,8 @@ public static class GameComponentsLookup {
         "Shoot",
         "Speed",
         "TargetPosition",
+        "CurrentHealthListener",
+        "MaxHealthListener",
         "PositionListener",
         "RotationListener"
     };
@@ -63,6 +71,7 @@ public static class GameComponentsLookup {
         typeof(Beta.BulletSpawnerComponent),
         typeof(Beta.CollidedComponent),
         typeof(Beta.CollisionIdComponent),
+        typeof(Beta.CurrentHealthComponent),
         typeof(Beta.CursorComponent),
         typeof(Beta.DestroyComponent),
         typeof(Beta.DestroyUponReachingTargetComponent),
@@ -70,6 +79,7 @@ public static class GameComponentsLookup {
         typeof(Beta.HittableComponent),
         typeof(Beta.IdComponent),
         typeof(Beta.LookAtComponent),
+        typeof(Beta.MaxHealthComponent),
         typeof(Beta.NetworkIdentityComponent),
         typeof(Beta.OverlapCircleRadiusComponent),
         typeof(Beta.OwnerIdComponent),
@@ -79,6 +89,8 @@ public static class GameComponentsLookup {
         typeof(Beta.ShootComponent),
         typeof(Beta.SpeedComponent),
         typeof(Beta.TargetPositionComponent),
+        typeof(CurrentHealthListenerComponent),
+        typeof(MaxHealthListenerComponent),
         typeof(PositionListenerComponent),
         typeof(RotationListenerComponent)
     };
