@@ -16,7 +16,7 @@ namespace Beta
 		{
 			foreach (var e in _entities)
 			{
-				if (Overlap(e) > 0)
+				if (IsAnyOverlapped(e))
 				{
 					var collision = Collision;
 					var instanceID = collision.GetInstanceID();
@@ -27,12 +27,12 @@ namespace Beta
 
 		private Collider2D Collision => _buffer[0];
 
-		private int Overlap(GameEntity entity)
+		private bool IsAnyOverlapped(GameEntity entity)
 			=> ServicesMediator.Physics.OverlapCircleNonAlloc
 			(
 				point: entity.position.Value,
 				radius: entity.overlapCircleRadius.Value,
 				buffer: _buffer
-			);
+			) > 0;
 	}
 }

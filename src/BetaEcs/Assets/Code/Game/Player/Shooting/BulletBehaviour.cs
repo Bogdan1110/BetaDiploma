@@ -8,6 +8,8 @@ namespace Beta
 		[SerializeField] private PositionView _positionView;
 		[SerializeField] private NetworkIdentity _networkIdentity;
 
+		private static BulletBalance Balance => ServicesMediator.Balance.Bullet;
+
 		[Server]
 		public void Initialize(int ownerInstanceId, Vector2 target)
 		{
@@ -17,8 +19,9 @@ namespace Beta
 			e.AddPositionListener(_positionView);
 			e.AddTargetPosition(target);
 			e.AddOwnerInstanceId(ownerInstanceId);
-			e.AddSpeed(ServicesMediator.Balance.Bullet.Speed);
+			e.AddSpeed(Balance.Speed);
 			e.AddNetworkIdentity(_networkIdentity);
+			e.AddOverlapCircleRadius(Balance.Radius);
 		}
 	}
 }
