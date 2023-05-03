@@ -11,7 +11,7 @@ namespace Beta
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
 			=> context.CreateCollector(AllOf(DamageDealt, CurrentHealth));
 
-		protected override bool Filter(GameEntity entity) => true;
+		protected override bool Filter(GameEntity entity) => entity.hasDamageDealt;
 
 		protected override void Execute(List<GameEntity> entites)
 		{

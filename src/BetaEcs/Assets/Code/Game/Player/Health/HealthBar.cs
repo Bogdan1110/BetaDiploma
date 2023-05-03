@@ -19,6 +19,8 @@ namespace Beta
 
 		public void OnCurrentHealth(GameEntity entity, int value)
 		{
+			Debug.Log($"isOwned = {isOwned}, value = {value}");
+
 			if (isOwned == false)
 			{
 				return;

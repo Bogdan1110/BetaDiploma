@@ -27,15 +27,6 @@ namespace Beta
 			HealthSetup(e);
 		}
 
-		private void HealthSetup(GameEntity e)
-		{
-			e.AddCurrentHealth(Balance.MaxHealth);
-			e.AddCurrentHealthListener(_healthBar);
-
-			e.AddMaxHealth(Balance.MaxHealth);
-			e.AddMaxHealthListener(_healthBar);
-		}
-
 		private void TransformSetup(GameEntity e)
 		{
 			e.AddPosition(transform.position);
@@ -43,6 +34,15 @@ namespace Beta
 
 			e.AddRotation(transform.rotation.z);
 			e.AddRotationListener(_rotationView);
+		}
+
+		private void HealthSetup(GameEntity e)
+		{
+			e.AddCurrentHealth(Balance.MaxHealth);
+			e.AddCurrentHealthListener(_healthBar);
+
+			e.AddMaxHealth(Balance.MaxHealth);
+			e.AddMaxHealthListener(_healthBar);
 		}
 	}
 }

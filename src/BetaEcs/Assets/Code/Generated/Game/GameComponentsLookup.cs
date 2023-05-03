@@ -18,26 +18,25 @@ public static class GameComponentsLookup {
     public const int DamageDealt = 7;
     public const int Destroy = 8;
     public const int DestroyUponReachingTarget = 9;
-    public const int Hit = 10;
-    public const int Hittable = 11;
-    public const int Id = 12;
-    public const int LookAt = 13;
-    public const int MaxHealth = 14;
-    public const int NetworkIdentity = 15;
-    public const int OverlapCircleRadius = 16;
-    public const int OwnerId = 17;
-    public const int Player = 18;
-    public const int Position = 19;
-    public const int Rotation = 20;
-    public const int Shoot = 21;
-    public const int Speed = 22;
-    public const int TargetPosition = 23;
-    public const int CurrentHealthListener = 24;
-    public const int MaxHealthListener = 25;
-    public const int PositionListener = 26;
-    public const int RotationListener = 27;
+    public const int Hittable = 10;
+    public const int Id = 11;
+    public const int LookAt = 12;
+    public const int MaxHealth = 13;
+    public const int NetworkIdentity = 14;
+    public const int OverlapCircleRadius = 15;
+    public const int OwnerId = 16;
+    public const int Player = 17;
+    public const int Position = 18;
+    public const int Rotation = 19;
+    public const int Shoot = 20;
+    public const int Speed = 21;
+    public const int TargetPosition = 22;
+    public const int CurrentHealthListener = 23;
+    public const int MaxHealthListener = 24;
+    public const int PositionListener = 25;
+    public const int RotationListener = 26;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Bullet",
@@ -50,7 +49,6 @@ public static class GameComponentsLookup {
         "DamageDealt",
         "Destroy",
         "DestroyUponReachingTarget",
-        "Hit",
         "Hittable",
         "Id",
         "LookAt",
@@ -81,7 +79,6 @@ public static class GameComponentsLookup {
         typeof(Beta.DamageDealtComponent),
         typeof(Beta.DestroyComponent),
         typeof(Beta.DestroyUponReachingTargetComponent),
-        typeof(Beta.HitComponent),
         typeof(Beta.HittableComponent),
         typeof(Beta.IdComponent),
         typeof(Beta.LookAtComponent),
