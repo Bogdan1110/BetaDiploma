@@ -8,22 +8,24 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Cursor = 0;
-    public const int Destroy = 1;
-    public const int InstanceId = 2;
-    public const int LookAt = 3;
-    public const int NetId = 4;
-    public const int NetworkIdentity = 5;
-    public const int Player = 6;
-    public const int Position = 7;
-    public const int Rotation = 8;
-    public const int Shoot = 9;
-    public const int PositionListener = 10;
-    public const int RotationListener = 11;
+    public const int BulletSpawner = 0;
+    public const int Cursor = 1;
+    public const int Destroy = 2;
+    public const int InstanceId = 3;
+    public const int LookAt = 4;
+    public const int NetId = 5;
+    public const int NetworkIdentity = 6;
+    public const int Player = 7;
+    public const int Position = 8;
+    public const int Rotation = 9;
+    public const int Shoot = 10;
+    public const int PositionListener = 11;
+    public const int RotationListener = 12;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
+        "BulletSpawner",
         "Cursor",
         "Destroy",
         "InstanceId",
@@ -39,6 +41,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Beta.BulletSpawnerComponent),
         typeof(Beta.CursorComponent),
         typeof(Beta.DestroyComponent),
         typeof(Beta.InstanceIdComponent),

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Entitas;
-using Object = UnityEngine.Object;
 
 namespace Beta
 {
@@ -13,8 +12,6 @@ namespace Beta
 		public SpawnBulletsSystem(Contexts contexts)
 			: base(contexts.game)
 			=> _players = contexts.game.GetGroup(GameMatcher.Player);
-
-		private BulletSpawner BulletSpawner => _bulletSpawner ??= Object.FindObjectOfType<BulletSpawner>();
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
 			=> context.CreateCollector(GameMatcher.Shoot);

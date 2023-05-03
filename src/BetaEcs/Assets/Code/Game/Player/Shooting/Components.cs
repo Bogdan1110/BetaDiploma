@@ -10,4 +10,6 @@ namespace Beta
 	[Game] public sealed class NetIdComponent : IComponent { public uint Value; }
 	
 	[Game] public sealed class InstanceIdComponent : IComponent { public int Value; }
+
+	[Game] public sealed class BulletSpawnerComponent : IComponent { public BulletSpawner Value; }
 }
