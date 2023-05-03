@@ -28,7 +28,5 @@ namespace Beta
 
 	[Game] [Cleanup(CleanupMode.RemoveComponent)] public sealed class CollisionIdComponent : IComponent { [EntityIndex] public uint Value; }
 
-	[Game] public sealed class HitComponent : IComponent { }
-
 	[Game] public sealed class HittableComponent : IComponent { }
 }

@@ -9,6 +9,9 @@ namespace Beta
 		[SerializeField] private PositionView _positionView;
 		[SerializeField] private RotationView _rotationView;
 		[SerializeField] private BulletSpawner _bulletSpawner;
+		[SerializeField] private HealthBar _healthBar;
+
+		private static PlayerBalance Balance => ServicesMediator.Balance.Player;
 
 		private void Start()
 		{
@@ -17,11 +20,28 @@ namespace Beta
 			e.isHittable = true;
 			e.AddId(netId);
 			e.AddNetworkIdentity(_networkIdentity);
+			e.AddBulletSpawner(_bulletSpawner);
+			e.AddSpeed(Balance.Speed);
+
+			TransformSetup(e);
+			HealthSetup(e);
+		}
+
+		private void TransformSetup(GameEntity e)
+		{
 			e.AddPosition(transform.position);
 			e.AddPositionListener(_positionView);
-			e.AddRotation(0f);
+
+			e.AddRotation(transform.rotation.z);
 			e.AddRotationListener(_rotationView);
-			e.AddBulletSpawner(_bulletSpawner);
+		}
+
+		private void HealthSetup(GameEntity e)
+		{
+			e.AddCurrentHealth(Balance.MaxHealth);
+			e.AddMaxHealth(Balance.MaxHealth);
+			
+			_healthBar.RegisterListener(e);
 		}
 	}
 }

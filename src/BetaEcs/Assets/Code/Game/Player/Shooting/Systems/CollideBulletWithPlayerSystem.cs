@@ -20,9 +20,9 @@ namespace Beta
 			foreach (var bullet in _bullets)
 			{
 				if (hittable.id.Value == bullet.collisionId.Value
-				    && hittable.isHit == false)
+				    && hittable.hasDamageDealt == false)
 				{
-					hittable.isHit = true;
+					hittable.AddDamageDealt(bullet.damage.Value);
 				}
 			}
 		}

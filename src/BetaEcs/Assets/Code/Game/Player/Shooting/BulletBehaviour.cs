@@ -24,6 +24,7 @@ namespace Beta
 			e.AddSpeed(Balance.Speed);
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddOverlapCircleRadius(Balance.Radius);
+			e.AddDamage(Balance.Damage);
 		}
 	}
 }
