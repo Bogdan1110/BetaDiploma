@@ -7,7 +7,7 @@ namespace Beta
 	{
 		[SerializeField] private BulletBehaviour _bulletPrefab;
 
-		public void SpawnBullet(int ownerId, Vector2 from, Vector2 to)
+		public void SpawnBullet(uint ownerId, Vector2 from, Vector2 to)
 		{
 			if (isServer)
 			{
@@ -20,10 +20,10 @@ namespace Beta
 		}
 
 		[Command]
-		private void CmdSpawnBullet(int owner, Vector2 position, Vector2 target)
+		private void CmdSpawnBullet(uint owner, Vector2 position, Vector2 target)
 			=> SpawnBulletOnServer(owner, position, target);
 
-		private void SpawnBulletOnServer(int owner, Vector2 position, Vector2 target)
+		private void SpawnBulletOnServer(uint owner, Vector2 position, Vector2 target)
 		{
 			var bullet = Instantiate(_bulletPrefab, position, Quaternion.identity);
 			NetworkServer.Spawn(bullet.gameObject);

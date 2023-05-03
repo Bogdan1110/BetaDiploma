@@ -66,17 +66,17 @@ public partial class Contexts {
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
-        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, uint>(
             CollisionId,
             game.GetGroup(GameMatcher.CollisionId),
             (e, c) => ((Beta.CollisionIdComponent)c).Value));
 
-        game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
+        game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, uint>(
             Id,
             game.GetGroup(GameMatcher.Id),
             (e, c) => ((Beta.IdComponent)c).Value));
 
-        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, uint>(
             OwnerId,
             game.GetGroup(GameMatcher.OwnerId),
             (e, c) => ((Beta.OwnerIdComponent)c).Value));
@@ -85,16 +85,16 @@ public partial class Contexts {
 
 public static class ContextsExtensions {
 
-    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithCollisionId(this GameContext context, int Value) {
-        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.CollisionId)).GetEntities(Value);
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithCollisionId(this GameContext context, uint Value) {
+        return ((Entitas.EntityIndex<GameEntity, uint>)context.GetEntityIndex(Contexts.CollisionId)).GetEntities(Value);
     }
 
-    public static GameEntity GetEntityWithId(this GameContext context, int Value) {
-        return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    public static GameEntity GetEntityWithId(this GameContext context, uint Value) {
+        return ((Entitas.PrimaryEntityIndex<GameEntity, uint>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
     }
 
-    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithOwnerId(this GameContext context, int Value) {
-        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.OwnerId)).GetEntities(Value);
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithOwnerId(this GameContext context, uint Value) {
+        return ((Entitas.EntityIndex<GameEntity, uint>)context.GetEntityIndex(Contexts.OwnerId)).GetEntities(Value);
     }
 }
 //------------------------------------------------------------------------------

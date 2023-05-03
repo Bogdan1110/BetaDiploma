@@ -11,11 +11,11 @@ namespace Beta
 		private static BulletBalance Balance => ServicesMediator.Balance.Bullet;
 
 		[Server]
-		public void Initialize(int ownerId, Vector2 target)
+		public void Initialize(uint ownerId, Vector2 target)
 		{
 			var e = Contexts.sharedInstance.game.CreateEntity();
 			e.isBullet = true;
-			e.AddId(gameObject.GetInstanceID());
+			e.AddId(netId);
 			e.AddPosition(transform.position);
 			e.AddPositionListener(_positionView);
 			e.AddTargetPosition(target);

@@ -1,4 +1,5 @@
 using Entitas;
+using Mirror;
 using UnityEngine;
 using static GameMatcher;
 
@@ -18,7 +19,7 @@ namespace Beta
 
 		private GameEntity CollidedEntity => _contexts.game.GetEntityWithId(CollisionInstanceID);
 
-		private int CollisionInstanceID => _buffer[0].gameObject.GetInstanceID();
+		private uint CollisionInstanceID => _buffer[0].GetComponent<NetworkIdentity>().netId;
 
 		public void Execute()
 		{

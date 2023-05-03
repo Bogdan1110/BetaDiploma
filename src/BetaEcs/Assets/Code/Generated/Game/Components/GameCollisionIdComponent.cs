@@ -11,14 +11,14 @@ public partial class GameEntity {
     public Beta.CollisionIdComponent collisionId { get { return (Beta.CollisionIdComponent)GetComponent(GameComponentsLookup.CollisionId); } }
     public bool hasCollisionId { get { return HasComponent(GameComponentsLookup.CollisionId); } }
 
-    public void AddCollisionId(int newValue) {
+    public void AddCollisionId(uint newValue) {
         var index = GameComponentsLookup.CollisionId;
         var component = (Beta.CollisionIdComponent)CreateComponent(index, typeof(Beta.CollisionIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceCollisionId(int newValue) {
+    public void ReplaceCollisionId(uint newValue) {
         var index = GameComponentsLookup.CollisionId;
         var component = (Beta.CollisionIdComponent)CreateComponent(index, typeof(Beta.CollisionIdComponent));
         component.Value = newValue;
