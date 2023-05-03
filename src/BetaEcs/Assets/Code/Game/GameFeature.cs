@@ -43,6 +43,7 @@ namespace Beta
 
 			Add(new BulletWithPlayerCollisionSystem(contexts));
 
+			Add(new DestroyCollidedBulletSystem(contexts));
 			Add(new DestroyReachedTargetEntitesSystem(contexts));
 			Add(new DestroyNetworkBehaviourSystem(contexts));
 		}

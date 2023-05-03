@@ -1,5 +1,4 @@
 using Entitas;
-using UnityEngine;
 using static GameMatcher;
 
 namespace Beta
@@ -24,7 +23,6 @@ namespace Beta
 				    && hittable.isHit == false)
 				{
 					hittable.isHit = true;
-					Debug.Log($"target id {hittable.id.Value}\n bullet.id {bullet.id.Value}\n bullet owner {bullet.ownerId.Value}");
 				}
 			}
 		}
