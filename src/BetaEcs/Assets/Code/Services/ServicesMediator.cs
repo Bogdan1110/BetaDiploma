@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace Beta
 {
-	public static class Services
+	public static class ServicesMediator
 	{
 		public static IInputService Input => Context.inputService.Value;
 
@@ -9,6 +11,8 @@ namespace Beta
 		public static ITimeService Time => Context.timeService.Value;
 
 		public static ICameraService Camera => Context.cameraService.Value;
+
+		public static Vector2 CursorWorldPosition => Camera.ScreenToWorldPoint(Input.CursorPosition);
 
 		private static ServicesContext Context => Contexts.sharedInstance.services;
 	}

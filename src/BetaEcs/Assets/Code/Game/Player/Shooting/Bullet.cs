@@ -25,7 +25,7 @@ namespace Beta
 				return;
 			}
 
-			transform.Translate((_target - transform.position).normalized * Services.Time.FixedDeltaTime * 5f);
+			transform.Translate((_target - transform.position).normalized * (ServicesMediator.Time.FixedDeltaTime * 5f));
 
 			if (Physics2D.OverlapCircleNonAlloc(transform.position, 0.5f, _buffer) > 0)
 			{

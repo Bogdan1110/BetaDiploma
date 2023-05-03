@@ -14,7 +14,7 @@ namespace Beta
 		{
 			foreach (var e in _entities)
 			{
-				e.ReplacePosition(Services.Camera.ScreenToWorldPoint(Services.Input.CursorPosition));
+				e.ReplacePosition(ServicesMediator.CursorWorldPosition);
 			}
 		}
 	}

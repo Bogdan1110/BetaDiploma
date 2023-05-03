@@ -10,7 +10,7 @@ namespace Beta
 
 		public void Execute()
 		{
-			if (Services.Input.IsLeftMouseButtonClicked)
+			if (ServicesMediator.Input.IsLeftMouseButtonClicked)
 			{
 				var shootSignal = _contexts.game.CreateEntity();
 				shootSignal.isShoot = true;

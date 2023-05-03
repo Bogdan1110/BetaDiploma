@@ -32,7 +32,7 @@ namespace Beta
 
 		private void UpdateLogic(Contexts contexts)
 		{
-			Add(new SpawnBulletSystem(contexts));
+			Add(new SpawnBulletsSystem(contexts));
 			Add(new LookAtTargetSystem(contexts));
 		}
 
