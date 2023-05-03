@@ -33,6 +33,10 @@ namespace Beta
 		private void UpdateLogic(Contexts contexts)
 		{
 			Add(new SpawnBulletsSystem(contexts));
+
+			Add(new ResetBalanceValuesSystem(contexts));
+
+			Add(new MoveToTargetSystem(contexts));
 			Add(new LookAtTargetSystem(contexts));
 		}
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Beta
 {
-	public class Bullet : NetworkBehaviour
+	public class BulletBehaviour : NetworkBehaviour
 	{
 		[SerializeField] private PositionView _positionView;
 

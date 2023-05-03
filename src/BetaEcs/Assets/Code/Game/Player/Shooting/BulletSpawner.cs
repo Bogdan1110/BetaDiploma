@@ -5,7 +5,7 @@ namespace Beta
 {
 	public class BulletSpawner : NetworkBehaviour
 	{
-		[SerializeField] private Bullet _bulletPrefab;
+		[SerializeField] private BulletBehaviour _bulletPrefab;
 
 		public void SpawnBullet(int ownerId, Vector2 from, Vector2 to)
 		{

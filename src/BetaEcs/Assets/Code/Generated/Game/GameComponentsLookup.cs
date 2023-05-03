@@ -21,11 +21,12 @@ public static class GameComponentsLookup {
     public const int Position = 10;
     public const int Rotation = 11;
     public const int Shoot = 12;
-    public const int TargetPosition = 13;
-    public const int PositionListener = 14;
-    public const int RotationListener = 15;
+    public const int Speed = 13;
+    public const int TargetPosition = 14;
+    public const int PositionListener = 15;
+    public const int RotationListener = 16;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
         "Bullet",
@@ -41,6 +42,7 @@ public static class GameComponentsLookup {
         "Position",
         "Rotation",
         "Shoot",
+        "Speed",
         "TargetPosition",
         "PositionListener",
         "RotationListener"
@@ -60,6 +62,7 @@ public static class GameComponentsLookup {
         typeof(Beta.PositionComponent),
         typeof(Beta.RotationComponent),
         typeof(Beta.ShootComponent),
+        typeof(Beta.SpeedComponent),
         typeof(Beta.TargetPositionComponent),
         typeof(PositionListenerComponent),
         typeof(RotationListenerComponent)
