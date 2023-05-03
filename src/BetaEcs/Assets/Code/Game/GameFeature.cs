@@ -41,7 +41,7 @@ namespace Beta
 
 			Add(new OverlapCircleSystem(contexts));
 
-			Add(new BulletWithPlayerCollisionSystem(contexts));
+			Add(new CollideBulletWithPlayerSystem(contexts));
 
 			Add(new DestroyCollidedBulletSystem(contexts));
 			Add(new DestroyReachedTargetEntitesSystem(contexts));

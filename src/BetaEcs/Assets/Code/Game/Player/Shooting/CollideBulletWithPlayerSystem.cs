@@ -3,12 +3,12 @@ using static GameMatcher;
 
 namespace Beta
 {
-	public sealed class BulletWithPlayerCollisionSystem : IExecuteSystem
+	public sealed class CollideBulletWithPlayerSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _bullets;
 		private readonly IGroup<GameEntity> _hittables;
 
-		public BulletWithPlayerCollisionSystem(Contexts contexts)
+		public CollideBulletWithPlayerSystem(Contexts contexts)
 		{
 			_bullets = contexts.game.GetGroup(AllOf(Bullet, Collided, CollisionId));
 			_hittables = contexts.game.GetGroup(AllOf(Hittable, Collided, Id));
