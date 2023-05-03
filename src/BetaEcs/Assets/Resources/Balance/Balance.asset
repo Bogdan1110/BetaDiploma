@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField:
     <Speed>k__BackingField: 3
+  <Bullet>k__BackingField:
+    <Speed>k__BackingField: 5

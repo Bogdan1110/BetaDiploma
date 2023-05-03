@@ -23,4 +23,6 @@ namespace Beta
 	[Game] public sealed class SpeedComponent : IComponent { public float Value; }
 	
 	[Game] public sealed class DestroyUponReachingTargetComponent : IComponent { }
+	
+	[Game] public sealed class OverlapCircleRadiusComponent : IComponent { public float Value; }
 }

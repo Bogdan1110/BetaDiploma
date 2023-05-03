@@ -39,6 +39,8 @@ namespace Beta
 			Add(new MoveToTargetSystem(contexts));
 			Add(new LookAtTargetSystem(contexts));
 
+			Add(new OverlapCircleSystem(contexts));
+
 			Add(new DestroyReachedTargetEntitesSystem(contexts));
 			Add(new DestroyNetworkBehaviourSystem(contexts));
 		}

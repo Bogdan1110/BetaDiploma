@@ -12,6 +12,7 @@ namespace Beta
 			Register<IBalanceService>(LoadBalance(), contexts.services.ReplaceBalanceService);
 			Register<ITimeService>(new TimeService(), contexts.services.ReplaceTimeService);
 			Register<ICameraService>(new CameraService(), contexts.services.ReplaceCameraService);
+			Register<IPhysicsService>(new PhysicsService(), contexts.services.ReplacePhysicsService);
 		}
 
 		private static Balance LoadBalance() => Resources.Load<Balance>(Constants.ResourcePath.Balance);

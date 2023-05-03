@@ -10,4 +10,6 @@ namespace Beta
 	[Services] [Unique] public sealed class TimeServiceComponent : IComponent { public ITimeService Value; }
 	
 	[Services] [Unique] public sealed class CameraServiceComponent : IComponent { public ICameraService Value; }
+
+	[Services] [Unique] public sealed class PhysicsServiceComponent : IComponent { public IPhysicsService Value; }
 }

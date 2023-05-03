@@ -17,17 +17,18 @@ public static class GameComponentsLookup {
     public const int LookAt = 6;
     public const int NetId = 7;
     public const int NetworkIdentity = 8;
-    public const int OwnerInstanceId = 9;
-    public const int Player = 10;
-    public const int Position = 11;
-    public const int Rotation = 12;
-    public const int Shoot = 13;
-    public const int Speed = 14;
-    public const int TargetPosition = 15;
-    public const int PositionListener = 16;
-    public const int RotationListener = 17;
+    public const int OverlapCircleRadius = 9;
+    public const int OwnerInstanceId = 10;
+    public const int Player = 11;
+    public const int Position = 12;
+    public const int Rotation = 13;
+    public const int Shoot = 14;
+    public const int Speed = 15;
+    public const int TargetPosition = 16;
+    public const int PositionListener = 17;
+    public const int RotationListener = 18;
 
-    public const int TotalComponents = 18;
+    public const int TotalComponents = 19;
 
     public static readonly string[] componentNames = {
         "Bullet",
@@ -39,6 +40,7 @@ public static class GameComponentsLookup {
         "LookAt",
         "NetId",
         "NetworkIdentity",
+        "OverlapCircleRadius",
         "OwnerInstanceId",
         "Player",
         "Position",
@@ -60,6 +62,7 @@ public static class GameComponentsLookup {
         typeof(Beta.LookAtComponent),
         typeof(Beta.NetIdComponent),
         typeof(Beta.NetworkIdentityComponent),
+        typeof(Beta.OverlapCircleRadiusComponent),
         typeof(Beta.OwnerInstanceIdComponent),
         typeof(Beta.PlayerComponent),
         typeof(Beta.PositionComponent),
