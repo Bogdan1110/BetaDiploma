@@ -6,12 +6,14 @@ namespace Beta
 {
 	public class HealthBar : NetworkBehaviour, ICurrentHealthListener, IMaxHealthListener
 	{
-		[SerializeField] private int _health;
-		[SerializeField] private int _maxHealth;
 		[SerializeField] private Slider _healthBar;
+
+		private float CurrentHealth { set => _healthBar.value = value; }
+		private float MaxHealth     { set => _healthBar.maxValue = value; }
 
 		// ReSharper disable once NotAccessedField.Local - mirror
 		[SyncVar(hook = nameof(SyncHealth))] private int _syncCurrentHealth;
+
 		// ReSharper disable once NotAccessedField.Local - mirror
 		[SyncVar(hook = nameof(SyncMaxHealth))] private int _syncMaxHealth;
 
@@ -71,22 +73,36 @@ namespace Beta
 
 		private void UpdateHealthBar()
 		{
-			_healthBar.value = _health;
-			_healthBar.maxValue = _maxHealth;
+			CurrentHealth = _syncCurrentHealth;
+			MaxHealth = _syncMaxHealth;
 		}
 
 		// ReSharper disable once UnusedParameter.Local - mirror
-		private void SyncHealth(int oldValue, int newValue) => _health = newValue;
+		private void SyncHealth(int oldValue, int newValue) => CurrentHealth = newValue;
 
 		// ReSharper disable once UnusedParameter.Local - mirror
-		private void SyncMaxHealth(int oldValue, int newValue) => _maxHealth = newValue;
+		private void SyncMaxHealth(int oldValue, int newValue) => MaxHealth = newValue;
 
-		[Command] private void CmdChangeHealth(int newValue) => ChangeHealthValue(newValue);
+		[Command(requiresAuthority = false)] private void CmdChangeHealth(int newValue) => ChangeHealthValue(newValue);
 
-		[Server] private void ChangeHealthValue(int newValue) => _syncCurrentHealth = newValue;
+		[Server]
+		private void ChangeHealthValue(int newValue)
+		{
+			_syncCurrentHealth = newValue;
+			RpcChangeHealth(newValue);
+		}
 
-		[Command] private void CmdChangeMaxHealth(int newValue) => ChangeMaxHealth(newValue);
+		[ClientRpc] private void RpcChangeHealth(int newValue) => CurrentHealth = newValue;
 
-		[Server] private void ChangeMaxHealth(int newValue) => _syncMaxHealth = newValue;
+		[Command(requiresAuthority = false)] private void CmdChangeMaxHealth(int newValue) => ChangeMaxHealth(newValue);
+
+		[Server]
+		private void ChangeMaxHealth(int newValue)
+		{
+			_syncMaxHealth = newValue;
+			RpcChangeMaxHealth(newValue);
+		}
+
+		[ClientRpc] private void RpcChangeMaxHealth(int newValue) => MaxHealth = newValue;
 	}
 }
