@@ -11,7 +11,7 @@ public partial class GameEntity {
     public Beta.OwnerInstanceIdComponent ownerInstanceId { get { return (Beta.OwnerInstanceIdComponent)GetComponent(GameComponentsLookup.OwnerInstanceId); } }
     public bool hasOwnerInstanceId { get { return HasComponent(GameComponentsLookup.OwnerInstanceId); } }
 
-    public void AddOwnerInstanceId(int newValue) {
+    public void AddOwnerId(int newValue) {
         var index = GameComponentsLookup.OwnerInstanceId;
         var component = (Beta.OwnerInstanceIdComponent)CreateComponent(index, typeof(Beta.OwnerInstanceIdComponent));
         component.Value = newValue;

@@ -8,9 +8,17 @@ namespace Beta
 	{
 		private readonly IGroup<GameEntity> _entities;
 		private readonly Collider2D[] _buffer = new Collider2D[1];
+		private readonly Contexts _contexts;
 
 		public OverlapCircleSystem(Contexts contexts)
-			=> _entities = contexts.game.GetGroup(AllOf(Position, OverlapCircleRadius));
+		{
+			_contexts = contexts;
+			_entities = contexts.game.GetGroup(AllOf(Id, Position, OverlapCircleRadius));
+		}
+
+		private GameEntity CollidedEntity => _contexts.game.GetEntityWithId(CollisionInstanceID);
+
+		private int CollisionInstanceID => _buffer[0].GetInstanceID();
 
 		public void Execute()
 		{
@@ -18,14 +26,10 @@ namespace Beta
 			{
 				if (IsAnyOverlapped(e))
 				{
-					var collision = Collision;
-					var instanceID = collision.GetInstanceID();
-					Debug.Log($"Collided with instanceID = {instanceID}");
+					e.MutualCollideWith(CollidedEntity);
 				}
 			}
 		}
-
-		private Collider2D Collision => _buffer[0];
 
 		private bool IsAnyOverlapped(GameEntity entity)
 			=> ServicesMediator.Physics.OverlapCircleNonAlloc
