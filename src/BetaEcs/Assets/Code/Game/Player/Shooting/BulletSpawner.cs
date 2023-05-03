@@ -19,11 +19,10 @@ namespace Beta
 			}
 		}
 
-		[Command]
+		[Command(requiresAuthority = true)]
 		private void CmdSpawnBullet(uint owner, Vector2 target, Vector2 position)
 			=> SpawnBulletOnServer(owner, target, position);
 
-		[Server]
 		private void SpawnBulletOnServer(uint owner, Vector2 target, Vector2 position)
 		{
 			var bullet = Instantiate(_bulletPrefab, position, Quaternion.identity);

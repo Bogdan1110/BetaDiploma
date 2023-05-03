@@ -284,7 +284,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  bulletPrefab: {fileID: 8184578125924925440, guid: 541ac7696fff85076b615c812f601f80, type: 3}
+  _bulletPrefab: {fileID: 2166266742416889041, guid: 541ac7696fff85076b615c812f601f80, type: 3}
 --- !u!114 &890632050
 MonoBehaviour:
   m_ObjectHideFlags: 0
