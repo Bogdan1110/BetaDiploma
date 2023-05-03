@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Beta.InstanceIdComponent instanceId { get { return (Beta.InstanceIdComponent)GetComponent(GameComponentsLookup.InstanceId); } }
-    public bool hasInstanceId { get { return HasComponent(GameComponentsLookup.InstanceId); } }
+    public Beta.IdComponent id { get { return (Beta.IdComponent)GetComponent(GameComponentsLookup.Id); } }
+    public bool hasId { get { return HasComponent(GameComponentsLookup.Id); } }
 
-    public void AddInstanceId(int newValue) {
-        var index = GameComponentsLookup.InstanceId;
-        var component = (Beta.InstanceIdComponent)CreateComponent(index, typeof(Beta.InstanceIdComponent));
+    public void AddId(int newValue) {
+        var index = GameComponentsLookup.Id;
+        var component = (Beta.IdComponent)CreateComponent(index, typeof(Beta.IdComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceInstanceId(int newValue) {
-        var index = GameComponentsLookup.InstanceId;
-        var component = (Beta.InstanceIdComponent)CreateComponent(index, typeof(Beta.InstanceIdComponent));
+    public void ReplaceId(int newValue) {
+        var index = GameComponentsLookup.Id;
+        var component = (Beta.IdComponent)CreateComponent(index, typeof(Beta.IdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }
 
-    public void RemoveInstanceId() {
-        RemoveComponent(GameComponentsLookup.InstanceId);
+    public void RemoveId() {
+        RemoveComponent(GameComponentsLookup.Id);
     }
 }
 
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherInstanceId;
+    static Entitas.IMatcher<GameEntity> _matcherId;
 
-    public static Entitas.IMatcher<GameEntity> InstanceId {
+    public static Entitas.IMatcher<GameEntity> Id {
         get {
-            if (_matcherInstanceId == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.InstanceId);
+            if (_matcherId == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Id);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherInstanceId = matcher;
+                _matcherId = matcher;
             }
 
-            return _matcherInstanceId;
+            return _matcherId;
         }
     }
 }

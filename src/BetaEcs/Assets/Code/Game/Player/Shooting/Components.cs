@@ -8,9 +8,7 @@ namespace Beta
 
 	[Game] [FlagPrefix("markTo")] [Cleanup(CleanupMode.DestroyEntity)] public sealed class DestroyComponent : IComponent { }
 	
-	[Game] public sealed class NetIdComponent : IComponent { [PrimaryEntityIndex] public uint Value; }
-	
-	[Game] public sealed class InstanceIdComponent : IComponent { [PrimaryEntityIndex] public int Value; }
+	[Game] public sealed class IdComponent : IComponent { [PrimaryEntityIndex] public int Value; }
 
 	[Game] public sealed class BulletSpawnerComponent : IComponent { public BulletSpawner Value; }
 	
@@ -25,4 +23,8 @@ namespace Beta
 	[Game] public sealed class DestroyUponReachingTargetComponent : IComponent { }
 	
 	[Game] public sealed class OverlapCircleRadiusComponent : IComponent { public float Value; }
+	
+	[Game] public sealed class CollidedComponent : IComponent { }
+
+	[Game] public sealed class CollisionIdComponent : IComponent { public int Value; }
 }

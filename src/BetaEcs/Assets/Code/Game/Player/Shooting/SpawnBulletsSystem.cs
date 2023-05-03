@@ -26,7 +26,7 @@ namespace Beta
 				{
 					e.bulletSpawner.Value.SpawnBullet
 					(
-						ownerId: e.instanceId.Value,
+						ownerId: e.id.Value,
 						from: e.position.Value,
 						to: ServicesMediator.CursorWorldPosition
 					);

@@ -10,35 +10,37 @@ public static class GameComponentsLookup {
 
     public const int Bullet = 0;
     public const int BulletSpawner = 1;
-    public const int Cursor = 2;
-    public const int Destroy = 3;
-    public const int DestroyUponReachingTarget = 4;
-    public const int InstanceId = 5;
-    public const int LookAt = 6;
-    public const int NetId = 7;
-    public const int NetworkIdentity = 8;
-    public const int OverlapCircleRadius = 9;
-    public const int OwnerInstanceId = 10;
-    public const int Player = 11;
-    public const int Position = 12;
-    public const int Rotation = 13;
-    public const int Shoot = 14;
-    public const int Speed = 15;
-    public const int TargetPosition = 16;
-    public const int PositionListener = 17;
-    public const int RotationListener = 18;
+    public const int Collided = 2;
+    public const int CollisionId = 3;
+    public const int Cursor = 4;
+    public const int Destroy = 5;
+    public const int DestroyUponReachingTarget = 6;
+    public const int Id = 7;
+    public const int LookAt = 8;
+    public const int NetworkIdentity = 9;
+    public const int OverlapCircleRadius = 10;
+    public const int OwnerInstanceId = 11;
+    public const int Player = 12;
+    public const int Position = 13;
+    public const int Rotation = 14;
+    public const int Shoot = 15;
+    public const int Speed = 16;
+    public const int TargetPosition = 17;
+    public const int PositionListener = 18;
+    public const int RotationListener = 19;
 
-    public const int TotalComponents = 19;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
         "Bullet",
         "BulletSpawner",
+        "Collided",
+        "CollisionId",
         "Cursor",
         "Destroy",
         "DestroyUponReachingTarget",
-        "InstanceId",
+        "Id",
         "LookAt",
-        "NetId",
         "NetworkIdentity",
         "OverlapCircleRadius",
         "OwnerInstanceId",
@@ -55,12 +57,13 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(Beta.BulletComponent),
         typeof(Beta.BulletSpawnerComponent),
+        typeof(Beta.CollidedComponent),
+        typeof(Beta.CollisionIdComponent),
         typeof(Beta.CursorComponent),
         typeof(Beta.DestroyComponent),
         typeof(Beta.DestroyUponReachingTargetComponent),
-        typeof(Beta.InstanceIdComponent),
+        typeof(Beta.IdComponent),
         typeof(Beta.LookAtComponent),
-        typeof(Beta.NetIdComponent),
         typeof(Beta.NetworkIdentityComponent),
         typeof(Beta.OverlapCircleRadiusComponent),
         typeof(Beta.OwnerInstanceIdComponent),

@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Beta.NetIdComponent netId { get { return (Beta.NetIdComponent)GetComponent(GameComponentsLookup.NetId); } }
-    public bool hasNetId { get { return HasComponent(GameComponentsLookup.NetId); } }
+    public Beta.CollisionIdComponent collisionId { get { return (Beta.CollisionIdComponent)GetComponent(GameComponentsLookup.CollisionId); } }
+    public bool hasCollisionId { get { return HasComponent(GameComponentsLookup.CollisionId); } }
 
-    public void AddNetId(uint newValue) {
-        var index = GameComponentsLookup.NetId;
-        var component = (Beta.NetIdComponent)CreateComponent(index, typeof(Beta.NetIdComponent));
+    public void AddCollisionId(int newValue) {
+        var index = GameComponentsLookup.CollisionId;
+        var component = (Beta.CollisionIdComponent)CreateComponent(index, typeof(Beta.CollisionIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceNetId(uint newValue) {
-        var index = GameComponentsLookup.NetId;
-        var component = (Beta.NetIdComponent)CreateComponent(index, typeof(Beta.NetIdComponent));
+    public void ReplaceCollisionId(int newValue) {
+        var index = GameComponentsLookup.CollisionId;
+        var component = (Beta.CollisionIdComponent)CreateComponent(index, typeof(Beta.CollisionIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }
 
-    public void RemoveNetId() {
-        RemoveComponent(GameComponentsLookup.NetId);
+    public void RemoveCollisionId() {
+        RemoveComponent(GameComponentsLookup.CollisionId);
     }
 }
 
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherNetId;
+    static Entitas.IMatcher<GameEntity> _matcherCollisionId;
 
-    public static Entitas.IMatcher<GameEntity> NetId {
+    public static Entitas.IMatcher<GameEntity> CollisionId {
         get {
-            if (_matcherNetId == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.NetId);
+            if (_matcherCollisionId == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.CollisionId);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherNetId = matcher;
+                _matcherCollisionId = matcher;
             }
 
-            return _matcherNetId;
+            return _matcherCollisionId;
         }
     }
 }

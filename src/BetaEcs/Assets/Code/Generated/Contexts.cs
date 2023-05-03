@@ -60,21 +60,15 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
-    public const string InstanceId = "InstanceId";
-    public const string NetId = "NetId";
+    public const string Id = "Id";
     public const string OwnerInstanceId = "OwnerInstanceId";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
         game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
-            InstanceId,
-            game.GetGroup(GameMatcher.InstanceId),
-            (e, c) => ((Beta.InstanceIdComponent)c).Value));
-
-        game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, uint>(
-            NetId,
-            game.GetGroup(GameMatcher.NetId),
-            (e, c) => ((Beta.NetIdComponent)c).Value));
+            Id,
+            game.GetGroup(GameMatcher.Id),
+            (e, c) => ((Beta.IdComponent)c).Value));
 
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             OwnerInstanceId,
@@ -85,12 +79,8 @@ public partial class Contexts {
 
 public static class ContextsExtensions {
 
-    public static GameEntity GetEntityWithInstanceId(this GameContext context, int Value) {
-        return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.InstanceId)).GetEntity(Value);
-    }
-
-    public static GameEntity GetEntityWithNetId(this GameContext context, uint Value) {
-        return ((Entitas.PrimaryEntityIndex<GameEntity, uint>)context.GetEntityIndex(Contexts.NetId)).GetEntity(Value);
+    public static GameEntity GetEntityWithId(this GameContext context, int Value) {
+        return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
     }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithOwnerInstanceId(this GameContext context, int Value) {
