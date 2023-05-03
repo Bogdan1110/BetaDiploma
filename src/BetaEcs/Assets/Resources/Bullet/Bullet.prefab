@@ -185,6 +185,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _positionView: {fileID: 4957781420070754143}
+  _networkIdentity: {fileID: 188683078348606357}
 --- !u!114 &4957781420070754143
 MonoBehaviour:
   m_ObjectHideFlags: 0

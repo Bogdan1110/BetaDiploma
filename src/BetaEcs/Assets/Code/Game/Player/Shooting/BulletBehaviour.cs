@@ -6,6 +6,7 @@ namespace Beta
 	public class BulletBehaviour : NetworkBehaviour
 	{
 		[SerializeField] private PositionView _positionView;
+		[SerializeField] private NetworkIdentity _networkIdentity;
 
 		[Server]
 		public void Initialize(int ownerInstanceId, Vector2 target)
@@ -17,6 +18,7 @@ namespace Beta
 			e.AddTargetPosition(target);
 			e.AddOwnerInstanceId(ownerInstanceId);
 			e.AddSpeed(ServicesMediator.Balance.Bullet.Speed);
+			e.AddNetworkIdentity(_networkIdentity);
 		}
 	}
 }
