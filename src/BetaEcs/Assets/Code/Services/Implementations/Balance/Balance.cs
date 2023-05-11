@@ -6,6 +6,7 @@ namespace Beta
 	{
 		PlayerBalance Player { get; }
 		BulletBalance Bullet { get; }
+		FieldBalance  Field  { get; }
 	}
 
 	[CreateAssetMenu(fileName = nameof(Balance), menuName = nameof(Beta) + "/" + nameof(Balance), order = 0)]
@@ -13,5 +14,6 @@ namespace Beta
 	{
 		[field: SerializeField] public PlayerBalance Player { get; private set; }
 		[field: SerializeField] public BulletBalance Bullet { get; private set; }
+		[field: SerializeField] public FieldBalance  Field  { get; private set; }
 	}
 }
