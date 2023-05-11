@@ -16,28 +16,30 @@ public static class GameComponentsLookup {
     public const int Cursor = 5;
     public const int Damage = 6;
     public const int DamageDealt = 7;
-    public const int Destroy = 8;
-    public const int DestroyUponReachingTarget = 9;
-    public const int Hittable = 10;
-    public const int Id = 11;
-    public const int LookAt = 12;
-    public const int MaxHealth = 13;
-    public const int NetworkIdentity = 14;
-    public const int OverlapCircleRadius = 15;
-    public const int OwnerId = 16;
-    public const int Player = 17;
-    public const int Position = 18;
-    public const int Rotation = 19;
-    public const int Shoot = 20;
-    public const int Speed = 21;
-    public const int TargetPosition = 22;
-    public const int CurrentHealthListener = 23;
-    public const int DebugName = 24;
-    public const int MaxHealthListener = 25;
-    public const int PositionListener = 26;
-    public const int RotationListener = 27;
+    public const int Dead = 8;
+    public const int Destroy = 9;
+    public const int DestroyUponReachingTarget = 10;
+    public const int Hittable = 11;
+    public const int Id = 12;
+    public const int LookAt = 13;
+    public const int MaxHealth = 14;
+    public const int NetworkIdentity = 15;
+    public const int OverlapCircleRadius = 16;
+    public const int OwnerId = 17;
+    public const int Player = 18;
+    public const int Position = 19;
+    public const int Rotation = 20;
+    public const int Shoot = 21;
+    public const int Speed = 22;
+    public const int TargetPosition = 23;
+    public const int CurrentHealthListener = 24;
+    public const int DeadListener = 25;
+    public const int DebugName = 26;
+    public const int MaxHealthListener = 27;
+    public const int PositionListener = 28;
+    public const int RotationListener = 29;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 30;
 
     public static readonly string[] componentNames = {
         "Bullet",
@@ -48,6 +50,7 @@ public static class GameComponentsLookup {
         "Cursor",
         "Damage",
         "DamageDealt",
+        "Dead",
         "Destroy",
         "DestroyUponReachingTarget",
         "Hittable",
@@ -64,6 +67,7 @@ public static class GameComponentsLookup {
         "Speed",
         "TargetPosition",
         "CurrentHealthListener",
+        "DeadListener",
         "DebugName",
         "MaxHealthListener",
         "PositionListener",
@@ -79,6 +83,7 @@ public static class GameComponentsLookup {
         typeof(Beta.CursorComponent),
         typeof(Beta.DamageComponent),
         typeof(Beta.DamageDealtComponent),
+        typeof(Beta.DeadComponent),
         typeof(Beta.DestroyComponent),
         typeof(Beta.DestroyUponReachingTargetComponent),
         typeof(Beta.HittableComponent),
@@ -95,6 +100,7 @@ public static class GameComponentsLookup {
         typeof(Beta.SpeedComponent),
         typeof(Beta.TargetPositionComponent),
         typeof(CurrentHealthListenerComponent),
+        typeof(DeadListenerComponent),
         typeof(GameEntityTools.DebugNameComponent),
         typeof(MaxHealthListenerComponent),
         typeof(PositionListenerComponent),

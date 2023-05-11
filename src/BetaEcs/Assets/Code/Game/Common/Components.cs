@@ -1,5 +1,6 @@
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
+using static Entitas.CodeGeneration.Attributes.EventTarget;
 
 namespace Beta
 {
@@ -9,4 +10,5 @@ namespace Beta
 	
 	[Game] public sealed class OwnerIdComponent : IComponent { [EntityIndex] public uint Value; }
 	
+	[Game] [Event(Self)] public sealed class DeadComponent : IComponent { }
 }

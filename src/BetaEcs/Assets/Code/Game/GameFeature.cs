@@ -44,6 +44,8 @@ namespace Beta
 			Add(new CollideBulletWithPlayerSystem(contexts));
 			Add(new DamageHitEntitiesWithHealthSystem(contexts));
 
+			Add(new KillPlayerWithZeroHpSystem(contexts));
+
 			Add(new DestroyCollidedBulletSystem(contexts));
 			Add(new DestroyReachedTargetEntitesSystem(contexts));
 			Add(new DestroyNetworkBehaviourSystem(contexts));

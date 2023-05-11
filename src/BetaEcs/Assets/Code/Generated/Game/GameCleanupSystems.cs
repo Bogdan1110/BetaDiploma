@@ -9,9 +9,9 @@
 public sealed class GameCleanupSystems : Feature {
 
     public GameCleanupSystems(Contexts contexts) {
+        Add(new RemoveDamageDealtGameSystem(contexts));
         Add(new DestroyDestroyGameSystem(contexts));
         Add(new RemoveCollidedGameSystem(contexts));
         Add(new RemoveCollisionIdGameSystem(contexts));
-        Add(new RemoveDamageDealtGameSystem(contexts));
     }
 }
