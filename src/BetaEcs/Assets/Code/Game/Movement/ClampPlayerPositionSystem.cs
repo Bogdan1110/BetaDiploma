@@ -8,22 +8,20 @@ namespace Beta
 	{
 		private readonly IGroup<GameEntity> _entities;
 
-		private const float Border = 8;
-
 		public ClampPlayerPositionSystem(Contexts contexts)
-		{
-			_entities = contexts.game.GetGroup(AllOf(Player, Position));
-		}
+			=> _entities = contexts.game.GetGroup(AllOf(Player, Position));
+
+		private static FieldBalance Field => ServicesMediator.Balance.Field;
 
 		public void Execute()
 		{
 			foreach (var e in _entities)
 			{
-				var x = Mathf.Clamp(e.position.Value.x, -Border, Border);
-				var y = Mathf.Clamp(e.position.Value.y, -Border, Border);
-
-				e.ReplacePosition(new Vector2(x, y));
+				e.ReplacePosition(ClampPosition(e));
 			}
 		}
+
+		private static Vector2 ClampPosition(GameEntity e)
+			=> e.position.Value.Clamp(Field.MinPositions, Field.MaxPositions);
 	}
 }
