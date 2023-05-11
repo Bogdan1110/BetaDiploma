@@ -39,6 +39,8 @@ namespace Beta
 			Add(new MoveToTargetSystem(contexts));
 			Add(new LookAtTargetSystem(contexts));
 
+			Add(new ClampPlayerPositionSystem(contexts));
+
 			Add(new OverlapCircleSystem(contexts));
 
 			Add(new CollideBulletWithPlayerSystem(contexts));
