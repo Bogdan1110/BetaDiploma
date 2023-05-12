@@ -23,7 +23,10 @@ namespace Beta
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddBulletSpawner(_bulletSpawner);
 			e.AddSpeed(Balance.Speed);
-
+			if(e.isDead == true)
+			{
+				Destroy(gameObject);
+			}
 			TransformSetup(e);
 			HealthSetup(e);
 		}

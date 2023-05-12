@@ -19,3 +19,6 @@ MonoBehaviour:
     <Speed>k__BackingField: 5
     <Radius>k__BackingField: 0.025
     <Damage>k__BackingField: 1
+  <Field>k__BackingField:
+    <MinPositions>k__BackingField: {x: 8, y: 8}
+    <MaxPositions>k__BackingField: {x: 8, y: 8}

@@ -1,13 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Entitas;
+using UnityEngine;
+using static GameMatcher;
 
-namespace Assets.Code.Game.Health
+namespace Beta
 {
-    public class KillPlayerWithZeroHpSystem
-    {
-        
-    }
+	public sealed class KillPlayerWithZeroHpSystem : IExecuteSystem
+	{
+		private readonly IGroup<GameEntity> _entities;
+
+		public KillPlayerWithZeroHpSystem(Contexts contexts)
+			=> _entities = contexts.game.GetGroup(AllOf(Player, CurrentHealth));
+
+		public void Execute()
+		{
+			foreach (var e in _entities)
+			{
+				if (e.currentHealth.Value <= 0)
+				{
+					e.isDead = true;
+				}
+			}
+		}
+	}
 }
