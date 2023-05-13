@@ -10,6 +10,7 @@ namespace Beta
 		[SerializeField] private RotationView _rotationView;
 		[SerializeField] private BulletSpawner _bulletSpawner;
 		[SerializeField] private HealthBar _healthBar;
+		[SerializeField] private DeathView _deathView;
 
 		private static PlayerBalance Balance => ServicesMediator.Balance.Player;
 
@@ -23,10 +24,7 @@ namespace Beta
 			e.AddNetworkIdentity(_networkIdentity);
 			e.AddBulletSpawner(_bulletSpawner);
 			e.AddSpeed(Balance.Speed);
-			if(e.isDead == true)
-			{
-				Destroy(gameObject);
-			}
+			e.AddDeadListener(_deathView);
 			TransformSetup(e);
 			HealthSetup(e);
 		}
@@ -47,5 +45,9 @@ namespace Beta
 			
 			_healthBar.RegisterListener(e);
 		}
-	}
+        private void OnDestroy()
+        {
+            Contexts.sharedInstance.game.DestroyAllEntities();
+        }
+    }
 }

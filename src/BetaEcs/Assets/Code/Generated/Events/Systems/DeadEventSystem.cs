@@ -26,7 +26,6 @@ public sealed class DeadEventSystem : Entitas.ReactiveSystem<GameEntity> {
 
     protected override void Execute(System.Collections.Generic.List<GameEntity> entities) {
         foreach (var e in entities) {
-            
             _listenerBuffer.Clear();
             _listenerBuffer.AddRange(e.deadListener.value);
             foreach (var listener in _listenerBuffer) {

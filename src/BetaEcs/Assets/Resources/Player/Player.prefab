@@ -506,6 +506,7 @@ MonoBehaviour:
   _rotationView: {fileID: 3833584321183733399}
   _bulletSpawner: {fileID: 7682702384283839512}
   _healthBar: {fileID: 3459767239828393387}
+  _deathView: {fileID: 7723295802089040338}
 --- !u!114 &7682702384283839512
 MonoBehaviour:
   m_ObjectHideFlags: 0
