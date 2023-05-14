@@ -309,6 +309,7 @@ MonoBehaviour:
     dynamicAdjustmentTolerance: 1
     deliveryTimeEmaDuration: 2
   timeInterpolationGui: 0
+  _reviveScreen: {fileID: 0}
 --- !u!114 &661432888
 MonoBehaviour:
   m_ObjectHideFlags: 0

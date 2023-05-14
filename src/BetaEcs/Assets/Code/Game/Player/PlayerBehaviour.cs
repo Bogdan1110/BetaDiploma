@@ -12,42 +12,52 @@ namespace Beta
 		[SerializeField] private HealthBar _healthBar;
 		[SerializeField] private DeathView _deathView;
 
+		private GameEntity _entity;
+
 		private static PlayerBalance Balance => ServicesMediator.Balance.Player;
 
-		private void Start()
+		private void Start() => CreateEntity();
+
+		private void CreateEntity()
 		{
-			var e = Contexts.sharedInstance.game.CreateEntity();
-			e.AddDebugName($"Player (netId: {netId})");
-			e.isPlayer = true;
-			e.isHittable = true;
-			e.AddId(netId);
-			e.AddNetworkIdentity(_networkIdentity);
-			e.AddBulletSpawner(_bulletSpawner);
-			e.AddSpeed(Balance.Speed);
-			e.AddDeadListener(_deathView);
-			TransformSetup(e);
-			HealthSetup(e);
+			_entity = Contexts.sharedInstance.game.CreateEntity();
+			_entity.AddDebugName($"Player (netId: {netId})");
+			_entity.isPlayer = true;
+			_entity.isHittable = true;
+			_entity.AddId(netId);
+			_entity.AddNetworkIdentity(_networkIdentity);
+			_entity.AddBulletSpawner(_bulletSpawner);
+			_entity.AddSpeed(Balance.Speed);
+			_entity.AddDeadListener(_deathView);
+			TransformSetup();
+			HealthSetup();
 		}
 
-		private void TransformSetup(GameEntity e)
+		private void TransformSetup()
 		{
-			e.AddPosition(transform.position);
-			e.AddPositionListener(_positionView);
+			_entity.AddPosition(transform.position);
+			_entity.AddPositionListener(_positionView);
 
-			e.AddRotation(transform.rotation.z);
-			e.AddRotationListener(_rotationView);
+			_entity.AddRotation(transform.rotation.z);
+			_entity.AddRotationListener(_rotationView);
 		}
 
-		private void HealthSetup(GameEntity e)
+		private void HealthSetup()
 		{
-			e.AddCurrentHealth(Balance.MaxHealth);
-			e.AddMaxHealth(Balance.MaxHealth);
-			
-			_healthBar.RegisterListener(e);
+			_entity.AddCurrentHealth(Balance.MaxHealth);
+			_entity.AddMaxHealth(Balance.MaxHealth);
+
+			_healthBar.RegisterListener(_entity);
 		}
-        private void OnDestroy()
-        {
-            Contexts.sharedInstance.game.DestroyAllEntities();
-        }
-    }
+
+		private void OnDestroy()
+		{
+			_entity.InternalDestroy();
+
+			if (isLocalPlayer)
+			{
+				ReviveScreen.Instance.Show();
+			}
+		}
+	}
 }
