@@ -14,7 +14,11 @@ namespace Beta
 
 		private void Awake()
 		{
-			Instance ??= this;
+			if (Instance == false)
+			{
+				Instance = this;
+			}
+
 			Hide();
 		}
 

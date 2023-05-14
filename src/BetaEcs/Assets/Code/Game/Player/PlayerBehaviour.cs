@@ -52,7 +52,10 @@ namespace Beta
 
 		private void OnDestroy()
 		{
-			_entity.InternalDestroy();
+			if (_entity.isEnabled)
+			{
+				_entity.Destroy();
+			}
 
 			if (isLocalPlayer)
 			{
