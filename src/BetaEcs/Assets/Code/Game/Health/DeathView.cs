@@ -8,20 +8,20 @@ namespace Beta
 		[SerializeField] private GameObject _gameObject;
 
 		// ReSharper disable once NotAccessedField.Local - mirror moment
-		[SyncVar(hook = nameof(OnActiveChanged))] private bool _isGameObjectActive = true;
+		[SyncVar(hook = nameof(OnActiveChanged))] private bool _isActive = true;
 
-		private bool SetGameObjectActive
+		private bool Active
 		{
 			set
 			{
 				if (isServer)
 				{
-					_isGameObjectActive = value;
+					_isActive = value;
 				}
 			}
 		}
 
-		public void OnDead(GameEntity entity) => SetGameObjectActive = entity.isDead == false;
+		public void OnDead(GameEntity entity) => Active = !entity.isDead;
 
 		// ReSharper disable once UnusedParameter.Local - mirror moment
 		private void OnActiveChanged(bool oldValue, bool newValue) => _gameObject.SetActive(newValue);
