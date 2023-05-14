@@ -56,7 +56,7 @@ namespace Beta
 
 			if (isLocalPlayer)
 			{
-				Vector2.zero.SendAsSpawnPlayerMessage();
+				ReviveScreen.Instance.Show();
 			}
 		}
 	}

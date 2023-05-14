@@ -7,4 +7,6 @@ namespace Beta
 	{
 		public Vector2 Position;
 	}
+
+	public struct PlayerDeathMessage : NetworkMessage { }
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using Mirror;
 using UnityEngine;
 
@@ -10,17 +9,15 @@ namespace Beta
 		{
 			base.OnStartServer();
 			NetworkServer.RegisterHandler<SpawnPlayerMessage>(OnSpawnPlayer);
+			NetworkServer.RegisterHandler<PlayerDeathMessage>(OnPlayerDeath);
 		}
 
 		private void OnSpawnPlayer(NetworkConnectionToClient connection, SpawnPlayerMessage message)
-			=> StartCoroutine(Spawn(connection, message));
-
-		private IEnumerator Spawn(NetworkConnectionToClient connection, SpawnPlayerMessage message)
 		{
-			yield return new WaitForSeconds(1f);
-
 			var player = Instantiate(playerPrefab, message.Position, Quaternion.identity);
 			NetworkServer.AddPlayerForConnection(connection, player);
 		}
+
+		private void OnPlayerDeath(NetworkConnectionToClient connection, PlayerDeathMessage message) { }
 	}
 }
