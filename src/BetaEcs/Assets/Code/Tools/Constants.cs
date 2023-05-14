@@ -8,6 +8,7 @@ namespace Beta
 		{
 			public const string Balance = "Balance/Balance";
 			public const string Cursor = "Player/Cursor";
+			public const string Player = "Player/Player";
 		}
 	}
 }

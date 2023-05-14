@@ -7,18 +7,18 @@ namespace Beta
 	public class Reviving : NetworkBehaviour
 	{
 		private const float Cooldown = 1f;
-		private static PlayerBehaviour PlayerPrefab => Resources.Load<PlayerBehaviour>("Player/Player");
+		private static PlayerBehaviour PlayerPrefab => Resources.Load<PlayerBehaviour>(Constants.ResourcePath.Player);
 
 		public void Revive()
 		{
-			StartCoroutine(SpawnAfterCooldown());
+			Vector2.zero.SendAsSpawnPlayerMessage();
 		}
 
 		private IEnumerator SpawnAfterCooldown()
 		{
 			yield return new WaitForSeconds(Cooldown);
 
-			Spawn();
+			// Spawn();
 		}
 
 		private void Spawn() => this.Perform(onServer: RpcSpawnPlayerObject, onClient: CmdSpawnPlayerObject);
@@ -29,12 +29,7 @@ namespace Beta
 
 		private void SpawnPlayerObject()
 		{
-			if (isServer)
-			{
-				var newPlayerObject = Instantiate(PlayerPrefab).gameObject;
-				Debug.Log($"connectionToClient is not null = {connectionToClient is not null}");
-				NetworkServer.ReplacePlayerForConnection(connectionToClient, newPlayerObject);
-			}
+			if (isServer) { }
 		}
 	}
 }
