@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Mirror;
 using UnityEngine;
@@ -7,12 +8,8 @@ namespace Beta
 	public class Reviving : NetworkBehaviour
 	{
 		private const float Cooldown = 1f;
-		private static PlayerBehaviour PlayerPrefab => Resources.Load<PlayerBehaviour>(Constants.ResourcePath.Player);
 
-		public void Revive()
-		{
-			Vector2.zero.SendAsSpawnPlayerMessage();
-		}
+		public void Revive() => Vector2.zero.SendAsSpawnPlayerMessage();
 
 		private IEnumerator SpawnAfterCooldown()
 		{

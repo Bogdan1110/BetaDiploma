@@ -54,8 +54,10 @@ namespace Beta
 		{
 			_entity.InternalDestroy();
 
-			var reviving = FindObjectOfType<Reviving>();
-			reviving.Revive();
+			if (isLocalPlayer)
+			{
+				Vector2.zero.SendAsSpawnPlayerMessage();
+			}
 		}
 	}
 }
