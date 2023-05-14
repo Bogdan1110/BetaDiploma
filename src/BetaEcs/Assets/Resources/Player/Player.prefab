@@ -387,7 +387,6 @@ GameObject:
   - component: {fileID: 7682702384283839512}
   - component: {fileID: 3477905076471313682}
   - component: {fileID: 3459767239828393387}
-  - component: {fileID: -5064626110174204538}
   - component: {fileID: 7723295802089040338}
   m_Layer: 0
   m_Name: Player
@@ -555,24 +554,6 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _healthBar: {fileID: 8050499530030311868}
---- !u!114 &-5064626110174204538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8690364494154901087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1224907f3699ee344b6ce1ecce079c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  Target: {x: 0, y: 0, z: 0}
-  speed: 3
-  Player: {fileID: 6840130369330565205}
 --- !u!114 &7723295802089040338
 MonoBehaviour:
   m_ObjectHideFlags: 0
