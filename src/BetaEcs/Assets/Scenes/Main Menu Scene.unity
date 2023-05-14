@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 661432887}
   - component: {fileID: 661432885}
   m_Layer: 0
-  m_Name: NetMan
+  m_Name: Networking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2007,6 +2007,7 @@ GameObject:
   - component: {fileID: 2120884190}
   - component: {fileID: 2120884189}
   - component: {fileID: 2120884188}
+  - component: {fileID: 2120884192}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2096,3 +2097,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2120884192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120884187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41ecb2f22284e1fb96a3916e54c2acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _networking: {fileID: 661432887}
+  _startHostButton: {fileID: 316210794}
+  _startServerButton: {fileID: 1347364568}
+  _startClientButton: {fileID: 995823885}
+  _addressInputField: {fileID: 821793800}
+  _quitButton: {fileID: 2025254570}
