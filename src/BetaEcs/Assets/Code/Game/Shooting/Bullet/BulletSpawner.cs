@@ -8,16 +8,14 @@ namespace Beta
 		[SerializeField] private BulletBehaviour _bulletPrefab;
 
 		public void SpawnBullet(uint ownerId, Vector2 from, Vector2 to)
-		{
-			if (isServer)
-			{
-				SpawnBulletOnServer(ownerId, from, to);
-			}
-			else
-			{
-				CmdSpawnBullet(ownerId, from, to);
-			}
-		}
+			=> this.Perform
+			(
+				onServer: SpawnBulletOnServer,
+				onClient: CmdSpawnBullet,
+				arg1: ownerId,
+				arg2: from,
+				arg3: to
+			);
 
 		[Command]
 		private void CmdSpawnBullet(uint owner, Vector2 position, Vector2 target)

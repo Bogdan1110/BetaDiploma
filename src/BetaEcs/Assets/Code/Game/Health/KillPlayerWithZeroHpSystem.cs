@@ -12,11 +12,12 @@ namespace Beta
 
 		public void Execute()
 		{
-			foreach (var e in _entities)
+			foreach (var e in _entities.GetEntities())
 			{
 				if (e.currentHealth.Value <= 0)
 				{
 					e.isDead = true;
+					e.markToDestroy = true;
 				}
 			}
 		}

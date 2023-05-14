@@ -10,7 +10,7 @@ namespace Beta
 		// ReSharper disable once NotAccessedField.Local - mirror moment
 		[SyncVar(hook = nameof(OnActiveChanged))] private bool _isActive = true;
 
-		private bool Active
+		public bool Active
 		{
 			set
 			{
